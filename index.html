@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset Bungalows | Gili Meno, Lombok</title>
+    <meta name="description" content="Traditional lumbung bungalows on Gili Meno, 2 min from the harbour. Snorkel with turtles, dive pristine reefs. From 500K IDR/night. Owned by Gili Meno Center.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+        .hero-zoom { transform: scale(1.1); transition: transform 8s ease-out; }
+        .hero-zoom.active { transform: scale(1); }
+        .fade-up { opacity: 0; transform: translateY(30px); }
+        #map { height: 400px; border-radius: 12px; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+
+    <nav class="fixed w-full z-50 bg-stone-50/85 backdrop-blur-md border-b border-stone-200/50">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center gap-4">
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <img src="assets/logo.svg" alt="" width="44" height="44" class="rounded-xl shadow-sm ring-1 ring-stone-200/80 group-hover:ring-teal-600/30 transition" loading="eager">
+                <div class="text-left leading-tight">
+                    <div class="text-[10px] uppercase tracking-[0.35em] text-teal-800 font-medium">Gili Meno</div>
+                    <div class="text-xl md:text-2xl font-light tracking-wide"><span class="font-semibold">SUNSET</span> BUNGALOWS</div>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
+                <a href="#bungalows" class="hover:text-teal-700 transition">Stay</a>
+                <a href="#island" class="hover:text-teal-700 transition">Island</a>
+                <a href="#activities" class="hover:text-teal-700 transition">Activities</a>
+                <a href="#diving" class="hover:text-teal-700 transition">Diving</a>
+                <a href="#book" class="bg-stone-900 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition">Book</a>
+            </div>
+            <a href="#book" class="md:hidden bg-stone-900 text-white px-4 py-2 rounded-full text-sm shrink-0">Book</a>
+        </div>
+    </nav>
+
+    <section class="h-screen relative overflow-hidden">
+        <img src="assets/b0fc7cb9-bea2-4b18-b886-5ddf0c0f0f87.JPG" alt="Sunset Bungalows on Gili Meno" class="hero-zoom absolute inset-0 w-full h-full object-cover" id="heroImg" width="1280" height="960" fetchpriority="high">
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/65 via-stone-900/25 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-16 text-white">
+            <div class="max-w-7xl mx-auto">
+                <p class="text-xs uppercase tracking-[0.4em] text-white/80 mb-4 fade-up">Gili Meno · Lombok</p>
+                <h1 class="text-5xl md:text-8xl font-light mb-4 fade-up">Slow mornings.<br class="hidden md:inline"> Star-filled nights.</h1>
+                <p class="text-lg md:text-xl max-w-2xl font-light text-white/90 fade-up">Sasak-style lumbung bungalows two minutes from the harbour—quiet, tropical, and perfectly placed for turtles, diving, and sunset walks.</p>
+                <div class="mt-8 flex flex-wrap gap-4 fade-up">
+                    <a href="#book" class="bg-white text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-amber-50 transition">From 500K IDR / night</a>
+                    <a href="#activities" class="border border-white/90 px-8 py-3 rounded-full hover:bg-white/10 transition">Explore the island</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-teal-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="fade-up">
+                <div class="text-3xl font-light">2 min</div>
+                <div class="text-xs uppercase tracking-widest opacity-85">From harbour</div>
+            </div>
+            <div class="fade-up">
+                <div class="text-3xl font-light">No cars</div>
+                <div class="text-xs uppercase tracking-widest opacity-85">Bikes & cidomo</div>
+            </div>
+            <div class="fade-up">
+                <div class="text-3xl font-light">5 min boat</div>
+                <div class="text-xs uppercase tracking-widest opacity-85">To Gili T & Air</div>
+            </div>
+            <div class="fade-up">
+                <div class="text-3xl font-light">~1.5 hr</div>
+                <div class="text-xs uppercase tracking-widest opacity-85">Fast boat from Bali</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bungalows" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                <div class="fade-up">
+                    <h2 class="text-4xl md:text-6xl font-light mb-6">Your lumbung<br>near the water</h2>
+                    <p class="text-stone-600 mb-6 leading-relaxed">Curved roofs, cool tile floors, and private verandas. AC, mosquito nets, and ensuite bathrooms—simple island comfort without the noise of the party Gilis.</p>
+                    <div class="flex items-baseline gap-2 mb-8">
+                        <span class="text-4xl font-light">500.000</span>
+                        <span class="text-stone-500">IDR / night</span>
+                    </div>
+                    <a href="#book" class="inline-block border border-stone-900 px-8 py-3 rounded-full hover:bg-stone-900 hover:text-white transition">Request dates</a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 fade-up">
+                    <img src="assets/e606d10b-1ceb-4da0-9a0b-f8f9c9038707.JPG" alt="Bungalow interior" class="rounded-lg h-64 w-full object-cover" loading="lazy" width="960" height="1280">
+                    <img src="assets/c00a7bf1-002a-46eb-ba5d-a93440761df8.JPG" alt="Bungalow exterior and garden" class="rounded-lg h-64 w-full object-cover mt-8" loading="lazy" width="960" height="1280">
+                    <img src="assets/d6cf2b31-3508-4f47-a7e2-5d8365c9f0f2.JPG" alt="Veranda detail" class="rounded-lg h-64 w-full object-cover" loading="lazy" width="960" height="1280">
+                    <img src="assets/IMG_1533.jpg" alt="Room outlook" class="rounded-lg h-64 w-full object-cover mt-8" loading="lazy" width="753" height="460">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-up">
+                <img src="assets/1ad0d48f-6c2d-4ec4-b708-d538a9f1028d.JPG" alt="Bungalow gallery" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500" loading="lazy" width="960" height="1280">
+                <img src="assets/24f098f7-3144-4e64-9442-48636bdb4d8e.JPG" alt="Interior atmosphere" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500" loading="lazy" width="960" height="1280">
+                <img src="assets/25ddafca-707d-41c3-8213-f7f69d77a735.JPG" alt="Living space" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500" loading="lazy" width="960" height="1280">
+                <img src="assets/IMG_1535.jpg" alt="Room detail" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500" loading="lazy" width="357" height="379">
+                <img src="assets/b9920eb8-67de-47fd-ba6a-6f203146e690.JPG" alt="Outdoor space" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500 md:col-span-1" loading="lazy" width="960" height="1280">
+                <img src="assets/c8ac9759-6cb9-46e4-b339-4791bbd90ce8.JPG" alt="Path and greenery" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500" loading="lazy" width="960" height="1280">
+                <img src="assets/fefda767-605d-43a3-92fe-47d01d76d100.JPG" alt="Bungalow surrounds" class="rounded-lg h-48 w-full object-cover hover:scale-[1.02] transition duration-500 md:col-span-2" loading="lazy" width="960" height="1280">
+            </div>
+        </div>
+    </section>
+
+    <section id="island" class="py-24 bg-stone-100 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-light text-center mb-6 fade-up">The quiet Gili</h2>
+            <p class="text-stone-600 text-center max-w-2xl mx-auto mb-16 fade-up">Meno is the smallest of the three Gilis—think bicycles, beach time, and snorkelling routes the busy islands borrowed their postcards from.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="fade-up bg-white rounded-2xl p-8 shadow-sm border border-stone-200/60">
+                    <div class="text-teal-700 text-5xl mb-4">🐢</div>
+                    <h3 class="text-2xl mb-3">Turtles &amp; shallow reefs</h3>
+                    <p class="text-stone-600">Turtle Point and east-coast snorkelling deliver daily encounters with green and hawksbill turtles over gardens of hard coral.</p>
+                </div>
+                <div class="fade-up bg-white rounded-2xl p-8 shadow-sm border border-stone-200/60">
+                    <div class="text-teal-700 text-5xl mb-4">🪸</div>
+                    <h3 class="text-2xl mb-3">Wall dives nearby</h3>
+                    <p class="text-stone-600">Meno Wall, Macro Heaven, and classic Gili sites sit minutes away by boat—often with jacks, rays, and seasonal surprises.</p>
+                </div>
+                <div class="fade-up bg-white rounded-2xl p-8 shadow-sm border border-stone-200/60">
+                    <div class="text-teal-700 text-5xl mb-4">🚲</div>
+                    <h3 class="text-2xl mb-3">No traffic stress</h3>
+                    <p class="text-stone-600">Pedal the island loop in under two hours, hop a cidomo cart, or simply walk the shoreline—no scooters, no gridlock.</p>
+                </div>
+            </div>
+
+            <div class="fade-up">
+                <h3 class="text-2xl mb-6 text-center">Harbour-close. Easy arrivals.</h3>
+                <div id="map"></div>
+                <p class="text-sm text-stone-500 mt-3 text-center">Approximate location—meet us near Gili Meno harbour for walking directions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="py-24 px-6 bg-white border-y border-stone-200/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 fade-up">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-light mb-4">On &amp; around Meno</h2>
+                    <p class="text-stone-600 max-w-xl leading-relaxed">Inspired by what neighbouring resorts and local operators showcase—mix lazy beach days with turtles, diving, horses, and golden-hour hops.</p>
+                </div>
+                <p class="text-sm text-stone-500 max-w-sm">Photos below are stock visuals illustrating typical island experiences; arrange trips through local centres once you arrive.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="group fade-up overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Sea turtle swimming over reef" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" width="1200" height="900">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Snorkel with turtles</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Shallow sites along Meno’s east coast suit beginners—early mornings mean glassy water and fewer day-trip crowds.</p>
+                    </div>
+                </article>
+                <article class="group fade-up overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544551763-77a115408165?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Scuba diver above coral" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" width="1200" height="900">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Diving &amp; courses</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Fun dives, refreshers, and certifications—often bundled by harbour-area centres with small groups and nitrox options.</p>
+                    </div>
+                </article>
+                <article class="group fade-up overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500514966901-436137329c89?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Traditional boat at sunset" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" width="1200" height="900">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Sunset &amp; island boats</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Join shared or private outriggers for golden-hour cruising, or hop a quick shuttle to Trawangan and Air for dinner.</p>
+                    </div>
+                </article>
+                <article class="group fade-up overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598974357808-8ee916838824?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Horse riding along tropical beach" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" width="1200" height="900">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Horse rides on the sand</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Several Meno stables offer sunrise or sunset beach rides—book directly and choose operators with transparent horse-care policies.</p>
+                    </div>
+                </article>
+                <article class="group fade-up overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590523278135-108978e9f791?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Kayaks on turquoise tropical water" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" width="1200" height="900">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Kayaks &amp; SUP</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Paddle the sheltered leeward side, drift over coral bommies, or peek at the underwater statues from the surface on calmer days.</p>
+                    </div>
+                </article>
+                <article class="group fade-up overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1452570057194-1b94829bd002?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Tropical birds among greenery" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" width="1200" height="900">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Bird park &amp; inland strolls</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Combine a walk through Meno’s salt-flats interior with the island’s small sanctuary—ideal if you want shade between beach sessions.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="diving" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="fade-up">
+                <h2 class="text-4xl md:text-6xl font-light mb-6">Hosted by island locals</h2>
+                <p class="text-stone-600 mb-6 leading-relaxed">Sunset Bungalows is operated by <a href="https://www.gilimenodivecenter.com" target="_blank" rel="noopener noreferrer" class="text-teal-700 underline font-medium">Gili Meno Center</a>—your shortcut to tanks on site, timely boats, and dive briefings rooted in years on Meno’s sites.</p>
+                <ul class="space-y-3 mb-8 text-stone-600">
+                    <li class="flex gap-3"><span class="text-teal-700">✓</span> Classic routes: Meno Wall, Turtle Heaven, Bounty Wreck</li>
+                    <li class="flex gap-3"><span class="text-teal-700">✓</span> Training lanes from try-dives through guided specialties</li>
+                    <li class="flex gap-3"><span class="text-teal-700">✓</span> Mandarin fish &amp; dusk dives when conditions align</li>
+                    <li class="flex gap-3"><span class="text-teal-700">✓</span> Straight talk on currents, marine-life etiquette, and reefs</li>
+                </ul>
+                <a href="https://www.gilimenodivecenter.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-700 text-white px-8 py-3 rounded-full hover:bg-teal-800 transition">Plan dives with Gili Meno Center</a>
+            </div>
+            <div class="fade-up">
+                <div class="relative rounded-2xl overflow-hidden shadow-lg ring-1 ring-stone-900/10 aspect-[4/5] max-h-[520px]">
+                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Colourful reef fish underwater" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="1200" height="1500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-900/25 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+                        <h3 class="text-3xl font-light mb-4">Pack your logbook</h3>
+                        <ul class="space-y-3 text-sm text-white/90">
+                            <li class="border-b border-white/15 pb-3">Pair bungalow nights with morning two-tank trips</li>
+                            <li class="border-b border-white/15 pb-3">Ask about macro spots when the tide swings</li>
+                            <li class="border-b border-white/15 pb-3">Respect turtle resting zones—give them space</li>
+                            <li>Surface intervals: coconut stalls &amp; hammock time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-24 bg-stone-900 text-white px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-light mb-6 fade-up">Request your dates</h2>
+            <p class="text-stone-300 mb-12 fade-up">500.000 IDR per night · No payment on this form—we confirm by email, usually within half a day.</p>
+
+            <form name="booking" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="bg-white text-stone-900 rounded-2xl p-8 text-left fade-up">
+                <input type="hidden" name="form-name" value="booking">
+                <p class="hidden">
+                    <label>Leave blank <input name="bot-field"></label>
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="check-in">Check-in</label>
+                        <input id="check-in" type="date" name="check-in" required class="w-full border border-stone-300 rounded-lg px-4 py-3">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="check-out">Check-out</label>
+                        <input id="check-out" type="date" name="check-out" required class="w-full border border-stone-300 rounded-lg px-4 py-3">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="guest-name">Name</label>
+                        <input id="guest-name" type="text" name="guest-name" required autocomplete="name" class="w-full border border-stone-300 rounded-lg px-4 py-3" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="email">Email</label>
+                        <input id="email" type="email" name="email" required autocomplete="email" class="w-full border border-stone-300 rounded-lg px-4 py-3" placeholder="you@email.com">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2" for="guests">Guests (optional)</label>
+                    <input id="guests" type="number" name="guests" min="1" max="12" class="w-full border border-stone-300 rounded-lg px-4 py-3" placeholder="2">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2" for="message">Message</label>
+                    <textarea id="message" name="message" class="w-full border border-stone-300 rounded-lg px-4 py-3" rows="4" placeholder="Diving plans, airport pickups, special occasions…"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-teal-700 text-white py-4 rounded-full font-medium hover:bg-teal-600 transition">Send booking request</button>
+                <p class="text-xs text-stone-500 mt-4 text-center">Submitted securely via Netlify Forms—in production you’ll see entries in your Netlify dashboard.</p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-stone-100 py-12 px-6 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-8">
+            <div class="flex items-center gap-4">
+                <img src="assets/logo.svg" alt="" width="48" height="48" class="rounded-xl" loading="lazy">
+                <div>
+                    <div class="text-xl font-light tracking-wide"><span class="font-semibold">SUNSET</span> BUNGALOWS</div>
+                    <p class="text-stone-600 text-sm mt-1">Gili Meno, Lombok, Indonesia</p>
+                </div>
+            </div>
+            <div class="text-center md:text-right text-sm text-stone-600">
+                <p class="mb-2">Owned &amp; operated by <a href="https://www.gilimenodivecenter.com" target="_blank" rel="noopener noreferrer" class="text-teal-800 underline font-medium">Gili Meno Center</a></p>
+                <p class="text-stone-500">© <span id="y"></span> Sunset Bungalows</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        window.addEventListener('load', function () {
+            var hero = document.getElementById('heroImg');
+            if (hero) hero.classList.add('active');
+        });
+
+        gsap.utils.toArray('.fade-up').forEach(function (el) {
+            gsap.fromTo(el,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 88%',
+                    },
+                }
+            );
+        });
+
+        var map = L.map('map').setView([-8.3495, 116.0550], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap',
+            maxZoom: 19,
+        }).addTo(map);
+
+        L.marker([-8.3500, 116.0545]).addTo(map)
+            .bindPopup('<b>Sunset Bungalows</b><br>Near Gili Meno harbour');
+
+        L.marker([-8.3495, 116.0550]).addTo(map)
+            .bindPopup('Gili Meno harbour');
+
+        var today = new Date().toISOString().split('T')[0];
+        document.querySelectorAll('input[type="date"]').forEach(function (input) {
+            input.min = today;
+        });
+
+        var bookingForm = document.querySelector('form[name="booking"]');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function (e) {
+                var cin = bookingForm.querySelector('#check-in').value;
+                var cout = bookingForm.querySelector('#check-out').value;
+                if (cin && cout && cout <= cin) {
+                    e.preventDefault();
+                    alert('Please choose a check-out date after check-in.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
