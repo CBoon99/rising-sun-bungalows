@@ -21,7 +21,10 @@
         .hero-zoom.active { transform: scale(1); }
         .fade-up { opacity: 0; transform: translateY(30px); }
         #map { height: 400px; border-radius: 12px; }
-        html { scroll-behavior: smooth; }
+        .hero-wordmark {
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-800 antialiased">
@@ -49,6 +52,14 @@
     <section class="h-screen relative overflow-hidden">
         <img src="assets/b0fc7cb9-bea2-4b18-b886-5ddf0c0f0f87.JPG" alt="Rising Sun Bungalows on Gili Meno" class="hero-zoom absolute inset-0 w-full h-full object-cover" id="heroImg" width="1280" height="960" fetchpriority="high">
         <div class="absolute inset-0 bg-gradient-to-t from-stone-900/65 via-stone-900/25 to-transparent"></div>
+        <div class="absolute top-24 md:top-28 lg:top-32 left-0 right-0 z-10 flex justify-center pointer-events-none select-none px-6" aria-hidden="true">
+            <div class="text-center">
+                <p class="hero-wordmark text-4xl sm:text-5xl md:text-6xl font-light italic text-white tracking-wide leading-none">Rising Sun</p>
+                <div class="mx-auto mt-4 h-px w-14 bg-gradient-to-r from-transparent via-amber-200/95 to-transparent"></div>
+                <p class="mt-4 text-[10px] sm:text-[11px] uppercase tracking-[0.65em] text-white/85 font-medium">Bungalows</p>
+                <p class="mt-2 text-[9px] uppercase tracking-[0.45em] text-teal-100/75">Gili Meno</p>
+            </div>
+        </div>
         <div class="absolute bottom-0 left-0 right-0 p-6 md:p-16 text-white">
             <div class="max-w-7xl mx-auto">
                 <p class="text-xs uppercase tracking-[0.4em] text-white/80 mb-4 fade-up">Gili Meno · Lombok</p>
