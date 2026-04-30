@@ -1,4 +1,7 @@
+# Static HTML — everything lives at repo root (index.html, assets/, thank-you.html).
+# Netlify UI: Base directory = empty · Production branch = main
 [build]
+  command = "true"
   publish = "."
 
 [[headers]]

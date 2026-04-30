@@ -12,29 +12,29 @@
     <style>
         body { font-family: 'Manrope', sans-serif; }
         h1 { font-family: 'Cormorant Garamond', serif; }
+        .brand-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+        .brand-mark-box {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: linear-gradient(160deg, #faf8f5 0%, #f3efe6 100%);
+            border-color: #e8dcc8;
+            color: #8a6814;
+            font-style: italic;
+        }
+        .brand-mark-gold { color: #8a6814; }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 min-h-screen flex flex-col items-center justify-center px-6 py-16">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="72" height="72" class="mb-8 rounded-2xl shadow-md ring-1 ring-stone-200/80 overflow-hidden" role="img" aria-label="Rising Sun Bungalows">
-        <defs>
-            <linearGradient id="rsbTySky" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#fde68a"/>
-                <stop offset="45%" stop-color="#fb923c"/>
-                <stop offset="100%" stop-color="#be185d"/>
-            </linearGradient>
-            <linearGradient id="rsbTyDisk" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#fef08a"/>
-                <stop offset="100%" stop-color="#f59e0b"/>
-            </linearGradient>
-        </defs>
-        <rect width="64" height="64" rx="16" fill="url(#rsbTySky)"/>
-        <ellipse cx="32" cy="42" rx="14" ry="13" fill="url(#rsbTyDisk)" opacity="0.95"/>
-        <path fill="#292524" opacity="0.92" d="M6 44c8-14 18-18 26-18s18 4 26 18v6H6v-6z"/>
-        <path fill="none" stroke="#fafaf9" stroke-width="1.25" stroke-linecap="round" opacity="0.55" d="M12 42c6-8 13-11 20-11s14 3 20 11"/>
-        <path fill="#14532d" opacity="0.35" d="M48 22c2 1 3 3 2 5s-4 2-6 1 0-5 4-6zm-34 4c3 0 5 2 4 4s-4 3-6 2-1-5 2-6z"/>
-    </svg>
+<body class="bg-stone-50 text-stone-800 min-h-screen flex flex-col items-center justify-between px-6 py-16">
+    <div class="flex flex-1 flex-col items-center justify-center w-full max-w-lg">
+    <div class="mb-8 flex flex-col items-center gap-3 text-center" role="img" aria-label="Rising Sun Bungalows">
+        <span class="brand-mark-box flex h-16 w-16 items-center justify-center rounded-2xl border text-4xl font-semibold tracking-tight shadow-md">RS</span>
+        <p class="brand-serif text-sm uppercase tracking-[0.35em] text-stone-500">Gili Meno</p>
+    </div>
     <h1 class="text-4xl md:text-5xl font-light text-center mb-4">Thank you</h1>
     <p class="text-stone-600 text-center max-w-md mb-8 leading-relaxed">Your stay request was sent. We normally reply within 12 hours. For urgent dates, contact <a href="https://www.gilimenodivecenter.com" target="_blank" rel="noopener noreferrer" class="text-teal-700 underline font-medium">Gili Meno Center</a> directly.</p>
     <a href="/" class="bg-stone-900 text-white px-8 py-3 rounded-full hover:bg-teal-700 transition">Back to Rising Sun Bungalows</a>
+    </div>
+    <footer class="w-full max-w-3xl mt-12 pt-8 border-t border-stone-200 text-center text-xs text-stone-500">
+        <p>Developed by <a href="https://boonmind.io" target="_blank" rel="noopener noreferrer" class="text-teal-800 hover:text-teal-900 underline underline-offset-2 font-medium">boonmind.io</a></p>
+    </footer>
 </body>
 </html>
