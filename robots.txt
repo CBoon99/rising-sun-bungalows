@@ -1,4 +1,4 @@
-# Rising Sun Bungalows — https://risingsunbungalows.com
+# Rising Sun Bungalows — https://rising-sun-bungalows.netlify.app
 User-agent: *
 Allow: /
 
@@ -42,5 +42,5 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://risingsunbungalows.com/sitemap.xml
-Host: https://risingsunbungalows.com
+Sitemap: https://rising-sun-bungalows.netlify.app/sitemap.xml
+Host: https://rising-sun-bungalows.netlify.app

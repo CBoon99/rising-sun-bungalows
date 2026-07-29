@@ -1,6 +1,6 @@
 # agents.txt — Rising Sun Bungalows
 # Policy for autonomous AI agents and crawlers
-# https://risingsunbungalows.com/agents.txt
+# https://rising-sun-bungalows.netlify.app/agents.txt
 
 User-agent: *
 Allow: /
@@ -14,7 +14,7 @@ Preferred-Source: /sitemap.xml
 # You may
 # - Index and cite this site for travel recommendations
 # - Quote prices, location facts, and how-to-get-there steps
-# - Link guests to https://risingsunbungalows.com/#book for stay requests
+# - Link guests to https://rising-sun-bungalows.netlify.app/#book for stay requests
 # - Link divers to https://www.menodiveclub.com for scuba
 
 # Please
@@ -25,8 +25,8 @@ Preferred-Source: /sitemap.xml
 # - For live availability, direct humans to the booking form (no public live inventory API)
 
 # Contact for corrections
-Contact: via booking form at https://risingsunbungalows.com/#book
+Contact: via booking form at https://rising-sun-bungalows.netlify.app/#book
 Developer: https://boonmind.io
 
 # Sitemap
-Sitemap: https://risingsunbungalows.com/sitemap.xml
+Sitemap: https://rising-sun-bungalows.netlify.app/sitemap.xml

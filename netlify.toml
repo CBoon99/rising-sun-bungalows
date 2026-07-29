@@ -1,6 +1,6 @@
 # Static HTML — everything lives at repo root (index.html, assets/, thank-you.html).
 # Netlify UI: Base directory = empty · Production branch = main
-# Production domain used in canonical/OG: https://risingsunbungalows.com
+# Production domain used in canonical/OG: https://rising-sun-bungalows.netlify.app
 [build]
   command = "true"
   publish = "."
