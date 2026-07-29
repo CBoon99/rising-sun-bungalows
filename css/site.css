@@ -458,15 +458,6 @@ html.dark #hero-canvas {
   color: #f7f3ec;
 }
 
-.hero-kicker {
-  font-family: var(--font-label);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(247, 243, 236, 0.75);
-  margin-bottom: 1rem;
-}
-
 .hero h1 {
   font-size: clamp(2.9rem, 8vw, 5.4rem);
   max-width: 14ch;
@@ -492,37 +483,69 @@ html.dark #hero-canvas {
 
 .hero-badge {
   position: absolute;
-  top: 6.5rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -58%);
   z-index: 4;
   text-align: center;
   pointer-events: none;
+  width: min(92vw, 40rem);
+  padding: 0 1rem;
 }
 
 .hero-badge .word {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  font-weight: 400;
+  font-size: clamp(3.4rem, 11vw, 6.75rem);
+  font-weight: 500;
   font-style: italic;
-  color: #f3ead6;
-  letter-spacing: 0.01em;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  line-height: 0.95;
+  color: #f7f0e2;
+  letter-spacing: -0.01em;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.35),
+    0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
 .hero-badge .line {
-  width: 2.5rem;
+  width: 3.5rem;
   height: 1px;
-  margin: 0.7rem auto;
-  background: linear-gradient(90deg, transparent, #c9a86c, transparent);
+  margin: 1rem auto 0.85rem;
+  background: linear-gradient(90deg, transparent, #d4b57a, transparent);
 }
 
 .hero-badge .sub {
+  margin: 0;
   font-family: var(--font-label);
-  font-size: 0.62rem;
-  letter-spacing: 0.32em;
+  font-size: clamp(0.72rem, 1.6vw, 0.9rem);
+  letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 252, 247, 0.92);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hero-badge .place {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-label);
+  font-size: clamp(0.65rem, 1.3vw, 0.78rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 252, 247, 0.72);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Leave room under the centered mark for headline */
+.hero-content {
+  padding-bottom: 3.5rem;
+}
+
+@media (max-height: 720px) {
+  .hero-badge {
+    transform: translate(-50%, -62%);
+  }
+  .hero-badge .word {
+    font-size: clamp(2.8rem, 9vw, 5rem);
+  }
 }
 
 /* stats */
