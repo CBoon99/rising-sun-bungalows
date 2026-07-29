@@ -22,7 +22,7 @@
   function applyTheme(mode) {
     var dark = mode === "dark";
     root.classList.toggle("dark", dark);
-    if (metaTheme) metaTheme.setAttribute("content", dark ? "#070b10" : "#0d9488");
+    if (metaTheme) metaTheme.setAttribute("content", dark ? "#1a1612" : "#5e6f5a");
     try {
       localStorage.setItem("rsb-theme", mode);
     } catch (e) {}
@@ -47,6 +47,40 @@
   }
 
   initTheme();
+
+  /* ---------- burger menu ---------- */
+  var menuBtn = document.getElementById("menu-toggle");
+  var menuDrawer = document.getElementById("menu-drawer");
+  var menuBackdrop = document.getElementById("menu-backdrop");
+
+  function setMenu(open) {
+    if (!menuDrawer || !menuBtn) return;
+    menuDrawer.classList.toggle("is-open", open);
+    menuDrawer.setAttribute("aria-hidden", open ? "false" : "true");
+    menuBtn.classList.toggle("is-open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("menu-open", open);
+  }
+
+  if (menuBtn && menuDrawer) {
+    menuBtn.addEventListener("click", function () {
+      setMenu(!menuDrawer.classList.contains("is-open"));
+    });
+    if (menuBackdrop) {
+      menuBackdrop.addEventListener("click", function () {
+        setMenu(false);
+      });
+    }
+    menuDrawer.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setMenu(false);
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setMenu(false);
+    });
+  }
 
   /* ---------- year ---------- */
   var y = document.getElementById("y");
@@ -147,11 +181,12 @@
     }
     var pGeo = new THREE.BufferGeometry();
     pGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    // Soft warm dust motes only — no grid / tech shapes
     var pMat = new THREE.PointsMaterial({
-      size: 0.025,
-      color: isDark ? 0x2dd4bf : 0xffffff,
+      size: 0.03,
+      color: isDark ? 0xc9a86c : 0xfff6e8,
       transparent: true,
-      opacity: isDark ? 0.75 : 0.45,
+      opacity: isDark ? 0.4 : 0.35,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
@@ -159,66 +194,22 @@
     var points = new THREE.Points(pGeo, pMat);
     scene.add(points);
 
-    // Horizon grid
-    var grid = new THREE.GridHelper(18, 36, isDark ? 0x2dd4bf : 0xffffff, isDark ? 0x14535a : 0xffffff);
-    grid.position.y = -1.35;
-    grid.material.transparent = true;
-    grid.material.opacity = isDark ? 0.28 : 0.12;
-    scene.add(grid);
-
-    // Soft sun / core orb
-    var sunGeo = new THREE.SphereGeometry(0.55, 48, 48);
+    var sunGeo = new THREE.SphereGeometry(0.7, 32, 32);
     var sunMat = new THREE.MeshBasicMaterial({
-      color: isDark ? 0xe0b84a : 0xfff1c1,
+      color: isDark ? 0xc9a86c : 0xffe8b8,
       transparent: true,
-      opacity: isDark ? 0.55 : 0.35,
+      opacity: isDark ? 0.28 : 0.22,
     });
     var sun = new THREE.Mesh(sunGeo, sunMat);
-    sun.position.set(1.6, 1.1, -2.2);
+    sun.position.set(1.5, 1.0, -2.4);
     scene.add(sun);
-
-    var ringGeo = new THREE.RingGeometry(0.75, 0.78, 64);
-    var ringMat = new THREE.MeshBasicMaterial({
-      color: isDark ? 0x2dd4bf : 0xffffff,
-      transparent: true,
-      opacity: 0.35,
-      side: THREE.DoubleSide,
-    });
-    var ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.position.copy(sun.position);
-    ring.rotation.x = Math.PI * 0.4;
-    scene.add(ring);
-
-    var ring2 = ring.clone();
-    ring2.scale.setScalar(1.35);
-    ring2.material = ringMat.clone();
-    ring2.material.opacity = 0.18;
-    scene.add(ring2);
-
-    // Wireframe torus (future relic)
-    var torus = new THREE.Mesh(
-      new THREE.TorusGeometry(1.1, 0.01, 8, 100),
-      new THREE.MeshBasicMaterial({
-        color: isDark ? 0x2dd4bf : 0xffffff,
-        transparent: true,
-        opacity: 0.22,
-      })
-    );
-    torus.position.set(-1.4, -0.2, -1);
-    torus.rotation.x = 0.7;
-    torus.rotation.y = 0.4;
-    scene.add(torus);
 
     function setTheme(dark) {
       isDark = dark;
-      pMat.color.setHex(dark ? 0x2dd4bf : 0xffffff);
-      pMat.opacity = dark ? 0.75 : 0.45;
-      grid.material.color.setHex(dark ? 0x2dd4bf : 0xffffff);
-      grid.material.opacity = dark ? 0.28 : 0.12;
-      sunMat.color.setHex(dark ? 0xe0b84a : 0xfff1c1);
-      sunMat.opacity = dark ? 0.55 : 0.35;
-      ringMat.color.setHex(dark ? 0x2dd4bf : 0xffffff);
-      torus.material.color.setHex(dark ? 0x2dd4bf : 0xffffff);
+      pMat.color.setHex(dark ? 0xc9a86c : 0xfff6e8);
+      pMat.opacity = dark ? 0.4 : 0.35;
+      sunMat.color.setHex(dark ? 0xc9a86c : 0xffe8b8);
+      sunMat.opacity = dark ? 0.28 : 0.22;
     }
     window.__rsbSetThreeTheme = setTheme;
 
@@ -257,16 +248,11 @@
       }
       pGeo.attributes.position.needsUpdate = true;
 
-      points.rotation.y = t * 0.03;
-      grid.position.z = (t * 0.15) % 1;
-      sun.position.y = 1.1 + Math.sin(t * 0.5) * 0.08;
-      ring.rotation.z = t * 0.2;
-      ring2.rotation.z = -t * 0.12;
-      torus.rotation.z = t * 0.15;
-      torus.rotation.x = 0.7 + Math.sin(t * 0.3) * 0.08;
+      points.rotation.y = t * 0.02;
+      sun.position.y = 1.0 + Math.sin(t * 0.4) * 0.06;
 
-      camera.position.x += (mouseX - camera.position.x) * 0.04;
-      camera.position.y += (0.35 - mouseY - camera.position.y) * 0.04;
+      camera.position.x += (mouseX - camera.position.x) * 0.03;
+      camera.position.y += (0.35 - mouseY - camera.position.y) * 0.03;
       camera.lookAt(0, 0, 0);
 
       renderer.render(scene, camera);

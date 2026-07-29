@@ -10,7 +10,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <meta name="theme-color" content="#0d9488">
+    <meta name="theme-color" content="#5e6f5a">
     <meta name="color-scheme" content="light dark">
     <meta name="format-detection" content="telephone=no">
     <meta name="geo.region" content="ID-NB">
@@ -207,7 +207,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="/css/site.css">
     <script>
@@ -231,25 +231,36 @@
                     <strong>Rising Sun</strong> <span>Bungalows</span>
                 </div>
             </a>
-            <div class="nav-links">
-                <a href="#bungalows">Stay</a>
-                <a href="#long-stay">Long stay</a>
-                <a href="#cafe">Cafe</a>
-                <a href="#island">Island</a>
-                <a href="#diving">Diving</a>
-                <a href="#get-there">Get there</a>
-                <a href="https://www.instagram.com/risingsunbungalows/" target="_blank" rel="noopener noreferrer">IG</a>
-            </div>
             <div class="nav-actions">
                 <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle theme">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"/></svg>
                 </button>
-                <a href="#book" class="btn btn-primary nav-book-mobile">Book</a>
-                <a href="#book" class="btn btn-primary" style="display:none" id="nav-book-desktop">Book</a>
+                <a href="#book" class="btn btn-primary">Book</a>
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu-drawer">
+                    <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
             </div>
         </div>
     </nav>
+
+    <div class="menu-drawer" id="menu-drawer" aria-hidden="true">
+        <button type="button" class="menu-backdrop" id="menu-backdrop" aria-label="Close menu"></button>
+        <nav class="menu-panel" aria-label="Site sections">
+            <a href="#bungalows">Stay</a>
+            <a href="#long-stay">Long stay</a>
+            <a href="#cafe">Cafe</a>
+            <a href="#island">Island</a>
+            <a href="#diving">Diving</a>
+            <a href="#get-there">How to get there</a>
+            <a href="#book">Book</a>
+            <a href="https://www.instagram.com/risingsunbungalows/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/6281917137769" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="#book" class="btn btn-primary menu-cta">Request dates</a>
+            <p class="menu-meta">Jump to any section — Gili Meno, two minutes from the harbour.</p>
+        </nav>
+    </div>
 
     <main>
     <section class="hero">
@@ -594,10 +605,5 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
     <script src="/js/app.js"></script>
-    <style>
-      @media (min-width: 1024px) {
-        #nav-book-desktop { display: inline-flex !important; }
-      }
-    </style>
 </body>
 </html>
