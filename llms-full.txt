@@ -1,0 +1,83 @@
+# Rising Sun Bungalows — full facts for LLMs
+
+Last updated: 2026-07-29
+Canonical: https://risingsunbungalows.com/
+Language: en
+
+## Business
+
+Name: Rising Sun Bungalows
+Type: LodgingBusiness / GuestHouse (lumbung bungalows)
+Area served: Gili Meno, Gili Islands, Lombok, Indonesia
+Family-run: yes
+Partner dive operator: Meno Dive Club (https://www.menodiveclub.com) — SSI Dive Center, established December 2018
+Ownership note: Do NOT attribute ownership or booking contact to "Gili Meno Center". Stay bookings are Rising Sun Bungalows; scuba is Meno Dive Club.
+
+## Positioning
+
+Tagline direction: Slow mornings. Star-filled nights.
+Island position: "The untouched Gili" — first choice for travellers who do not want Gili Trawangan pub crawls (18–25 party tourism) or a dense hippie / healer / life-coach scene. Bicycles, beach time, turtles, real reefs.
+
+## Pricing
+
+- Nightly: from 500.000 IDR per night
+- Currency: Indonesian Rupiah (IDR)
+- Monthly / long stay: available on request (ask via booking form)
+- Payment on website: no — request form only; confirmation by email (usually within ~12 hours)
+
+## Amenities
+
+- Traditional Sasak-style lumbung bungalows
+- Air conditioning
+- Mosquito nets
+- Ensuite bathrooms
+- Private verandas
+- Garden / hammocks
+- Wi-Fi suitable for remote work (long-stay focus)
+- Workspace / desk space in calm garden setting
+- Bicycles / island access (no cars on Gili islands)
+- On-site café (VW combi) — opening soon
+
+## Location logistics
+
+- ~2 minutes walk from Gili Meno harbour
+- ~5 minute boat to Gili Trawangan / Gili Air (inter-island)
+- ~1.5 hour typical fast-boat time from Bali to the Gilis
+- Map approximate coordinates: -8.3500, 116.0545 (near harbour)
+
+## Getting there
+
+Bali → Gili Meno: fast boat from Sanur / Padang Bai area (~1.5–2 h). Some tickets land on Trawangan/Air; take a short island hop to Meno.
+Lombok → Gili Meno: boat from Bangsal harbour (~20–40 min). Airport LOP → road to Bangsal → boat.
+Gili T or Gili Air → Meno: public or private inter-island boat.
+Harbour → property: ~2 min walk. No scooters/cars on island.
+
+## Diving highlights (via Meno Dive Club)
+
+Fun dives, Discover Scuba / beginners, SSI courses, eco scuba, Dive & Stay packages.
+Example sites: Meno Wall, Turtle City, Bounty Wreck, Secret Reef, Bio Rock, Shark Point, Hans Reef.
+Google rating (MDC): ~4.9
+
+## Social & trust
+
+Instagram: https://www.instagram.com/risingsunbungalows/
+Google: search "Rising Sun Bungalows Gili Meno"
+Developer: https://boonmind.io
+
+## Site sections
+
+/#bungalows — rooms & gallery
+/#long-stay — monthly rates, Wi-Fi, workspace
+/#cafe — combi café opening soon
+/#island — island character & activities
+/#diving — Meno Dive Club partnership
+/#get-there — travel logistics & map
+/#book — Netlify Forms booking request
+
+## Images (public)
+
+https://risingsunbungalows.com/assets/web/og-image.jpg
+https://risingsunbungalows.com/assets/web/hero-bungalow.jpg
+https://risingsunbungalows.com/assets/web/bungalow-interior.jpg
+https://risingsunbungalows.com/assets/web/cafe-combi.jpg
+https://risingsunbungalows.com/assets/web/dive-turtle.jpg

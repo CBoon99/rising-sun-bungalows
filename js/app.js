@@ -1,0 +1,305 @@
+/* Rising Sun Bungalows — theme, Three.js hero, map, form */
+(function () {
+  "use strict";
+
+  /* ---------- theme ---------- */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("theme-toggle");
+  var metaTheme = document.querySelector('meta[name="theme-color"]');
+
+  function systemPrefersDark() {
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem("rsb-theme");
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyTheme(mode) {
+    var dark = mode === "dark";
+    root.classList.toggle("dark", dark);
+    if (metaTheme) metaTheme.setAttribute("content", dark ? "#070b10" : "#0d9488");
+    try {
+      localStorage.setItem("rsb-theme", mode);
+    } catch (e) {}
+    if (window.__rsbSetThreeTheme) window.__rsbSetThreeTheme(dark);
+  }
+
+  function initTheme() {
+    var stored = getStoredTheme();
+    applyTheme(stored || (systemPrefersDark() ? "dark" : "light"));
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      applyTheme(root.classList.contains("dark") ? "light" : "dark");
+    });
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+      if (!getStoredTheme()) applyTheme(e.matches ? "dark" : "light");
+    });
+  }
+
+  initTheme();
+
+  /* ---------- year ---------- */
+  var y = document.getElementById("y");
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  /* ---------- hero image zoom ---------- */
+  window.addEventListener("load", function () {
+    var hero = document.getElementById("heroImg");
+    if (hero) hero.classList.add("is-active");
+  });
+
+  /* ---------- GSAP ---------- */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".fade-up").forEach(function (el) {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          ease: "power2.out",
+          scrollTrigger: { trigger: el, start: "top 90%" },
+        }
+      );
+    });
+  } else {
+    document.querySelectorAll(".fade-up").forEach(function (el) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+  }
+
+  /* ---------- map ---------- */
+  if (window.L && document.getElementById("map")) {
+    var map = L.map("map", { scrollWheelZoom: false }).setView([-8.3495, 116.055], 15);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "OpenStreetMap",
+      maxZoom: 19,
+    }).addTo(map);
+    L.marker([-8.35, 116.0545]).addTo(map).bindPopup("<b>Rising Sun Bungalows</b><br>Near Gili Meno harbour");
+    L.marker([-8.3495, 116.055]).addTo(map).bindPopup("Gili Meno harbour");
+  }
+
+  /* ---------- booking form ---------- */
+  var today = new Date().toISOString().split("T")[0];
+  document.querySelectorAll('input[type="date"]').forEach(function (input) {
+    input.min = today;
+  });
+
+  var bookingForm = document.querySelector('form[name="booking"]');
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", function (e) {
+      var cin = bookingForm.querySelector("#check-in").value;
+      var cout = bookingForm.querySelector("#check-out").value;
+      if (cin && cout && cout <= cin) {
+        e.preventDefault();
+        alert("Please choose a check-out date after check-in.");
+      }
+    });
+  }
+
+  /* ---------- Three.js futuristic ambient ---------- */
+  function initThree() {
+    var canvas = document.getElementById("hero-canvas");
+    if (!canvas || !window.THREE) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      canvas.style.display = "none";
+      return;
+    }
+
+    var THREE = window.THREE;
+    var renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      alpha: true,
+      antialias: true,
+      powerPreference: "high-performance",
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(0x000000, 0);
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+    camera.position.set(0, 0.35, 4.2);
+
+    var isDark = root.classList.contains("dark");
+
+    // Particle field
+    var count = 900;
+    var positions = new Float32Array(count * 3);
+    var speeds = new Float32Array(count);
+    for (var i = 0; i < count; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 12;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 7;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 8;
+      speeds[i] = 0.15 + Math.random() * 0.45;
+    }
+    var pGeo = new THREE.BufferGeometry();
+    pGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    var pMat = new THREE.PointsMaterial({
+      size: 0.025,
+      color: isDark ? 0x2dd4bf : 0xffffff,
+      transparent: true,
+      opacity: isDark ? 0.75 : 0.45,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      sizeAttenuation: true,
+    });
+    var points = new THREE.Points(pGeo, pMat);
+    scene.add(points);
+
+    // Horizon grid
+    var grid = new THREE.GridHelper(18, 36, isDark ? 0x2dd4bf : 0xffffff, isDark ? 0x14535a : 0xffffff);
+    grid.position.y = -1.35;
+    grid.material.transparent = true;
+    grid.material.opacity = isDark ? 0.28 : 0.12;
+    scene.add(grid);
+
+    // Soft sun / core orb
+    var sunGeo = new THREE.SphereGeometry(0.55, 48, 48);
+    var sunMat = new THREE.MeshBasicMaterial({
+      color: isDark ? 0xe0b84a : 0xfff1c1,
+      transparent: true,
+      opacity: isDark ? 0.55 : 0.35,
+    });
+    var sun = new THREE.Mesh(sunGeo, sunMat);
+    sun.position.set(1.6, 1.1, -2.2);
+    scene.add(sun);
+
+    var ringGeo = new THREE.RingGeometry(0.75, 0.78, 64);
+    var ringMat = new THREE.MeshBasicMaterial({
+      color: isDark ? 0x2dd4bf : 0xffffff,
+      transparent: true,
+      opacity: 0.35,
+      side: THREE.DoubleSide,
+    });
+    var ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.copy(sun.position);
+    ring.rotation.x = Math.PI * 0.4;
+    scene.add(ring);
+
+    var ring2 = ring.clone();
+    ring2.scale.setScalar(1.35);
+    ring2.material = ringMat.clone();
+    ring2.material.opacity = 0.18;
+    scene.add(ring2);
+
+    // Wireframe torus (future relic)
+    var torus = new THREE.Mesh(
+      new THREE.TorusGeometry(1.1, 0.01, 8, 100),
+      new THREE.MeshBasicMaterial({
+        color: isDark ? 0x2dd4bf : 0xffffff,
+        transparent: true,
+        opacity: 0.22,
+      })
+    );
+    torus.position.set(-1.4, -0.2, -1);
+    torus.rotation.x = 0.7;
+    torus.rotation.y = 0.4;
+    scene.add(torus);
+
+    function setTheme(dark) {
+      isDark = dark;
+      pMat.color.setHex(dark ? 0x2dd4bf : 0xffffff);
+      pMat.opacity = dark ? 0.75 : 0.45;
+      grid.material.color.setHex(dark ? 0x2dd4bf : 0xffffff);
+      grid.material.opacity = dark ? 0.28 : 0.12;
+      sunMat.color.setHex(dark ? 0xe0b84a : 0xfff1c1);
+      sunMat.opacity = dark ? 0.55 : 0.35;
+      ringMat.color.setHex(dark ? 0x2dd4bf : 0xffffff);
+      torus.material.color.setHex(dark ? 0x2dd4bf : 0xffffff);
+    }
+    window.__rsbSetThreeTheme = setTheme;
+
+    function resize() {
+      var w = canvas.clientWidth || canvas.parentElement.clientWidth;
+      var h = canvas.clientHeight || canvas.parentElement.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+
+    var mouseX = 0;
+    var mouseY = 0;
+    window.addEventListener(
+      "pointermove",
+      function (e) {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 0.4;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 0.25;
+      },
+      { passive: true }
+    );
+
+    var t0 = performance.now();
+    var running = true;
+
+    function animate(now) {
+      if (!running) return;
+      requestAnimationFrame(animate);
+      var t = (now - t0) * 0.001;
+
+      var pos = pGeo.attributes.position.array;
+      for (var i = 0; i < count; i++) {
+        pos[i * 3 + 1] += Math.sin(t * speeds[i] + i) * 0.0012;
+        pos[i * 3] += Math.cos(t * 0.1 + i * 0.01) * 0.0006;
+      }
+      pGeo.attributes.position.needsUpdate = true;
+
+      points.rotation.y = t * 0.03;
+      grid.position.z = (t * 0.15) % 1;
+      sun.position.y = 1.1 + Math.sin(t * 0.5) * 0.08;
+      ring.rotation.z = t * 0.2;
+      ring2.rotation.z = -t * 0.12;
+      torus.rotation.z = t * 0.15;
+      torus.rotation.x = 0.7 + Math.sin(t * 0.3) * 0.08;
+
+      camera.position.x += (mouseX - camera.position.x) * 0.04;
+      camera.position.y += (0.35 - mouseY - camera.position.y) * 0.04;
+      camera.lookAt(0, 0, 0);
+
+      renderer.render(scene, camera);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    requestAnimationFrame(animate);
+
+    // Pause when hero off-screen
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          running = entries[0].isIntersecting;
+          if (running) requestAnimationFrame(animate);
+        },
+        { threshold: 0.05 }
+      );
+      io.observe(canvas.parentElement || canvas);
+    }
+  }
+
+  // Load Three from CDN if not present
+  if (window.THREE) {
+    initThree();
+  } else {
+    var s = document.createElement("script");
+    s.src = "https://unpkg.com/three@0.160.0/build/three.min.js";
+    s.onload = initThree;
+    s.onerror = function () {
+      var c = document.getElementById("hero-canvas");
+      if (c) c.style.display = "none";
+    };
+    document.head.appendChild(s);
+  }
+})();

@@ -1,1 +1,5 @@
 .DS_Store
+# Raw client dumps — site uses optimised copies in assets/web/
+assets/photos/
+assets/old/
+**/.DS_Store

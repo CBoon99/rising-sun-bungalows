@@ -1,0 +1,11 @@
+/* TEAM */
+Developer: BoonMind
+Site: https://boonmind.io
+Client: Rising Sun Bungalows / Meno Dive Club family
+
+/* SITE */
+Standards: HTML5, Tailwind CDN, Leaflet, GSAP
+Components: Netlify Forms, JSON-LD schema, llms.txt, agents.txt
+Location: Gili Meno, Lombok, Indonesia
+Language: English
+Last update: 2026-07-29

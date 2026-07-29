@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://risingsunbungalows.com/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://risingsunbungalows.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://risingsunbungalows.com/"/>
+    <image:image>
+      <image:loc>https://risingsunbungalows.com/assets/web/og-image.jpg</image:loc>
+      <image:title>Rising Sun Bungalows — Gili Meno</image:title>
+      <image:caption>Sasak-style lumbung bungalows on Gili Meno, Lombok</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://risingsunbungalows.com/assets/web/hero-bungalow.jpg</image:loc>
+      <image:title>Lumbung bungalow exterior</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://risingsunbungalows.com/assets/web/cafe-combi.jpg</image:loc>
+      <image:title>Café combi van — opening soon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://risingsunbungalows.com/thank-you.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://risingsunbungalows.com/llms.txt</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
