@@ -454,7 +454,7 @@ html.dark #hero-canvas {
   z-index: 4;
   width: min(1120px, calc(100% - 2.5rem));
   margin: 0 auto;
-  padding: 0 0 4.5rem;
+  padding: 0 0 3.5rem;
   color: #f7f3ec;
 }
 
@@ -532,11 +532,6 @@ html.dark #hero-canvas {
   text-transform: uppercase;
   color: rgba(255, 252, 247, 0.72);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-}
-
-/* Leave room under the centered mark for headline */
-.hero-content {
-  padding-bottom: 3.5rem;
 }
 
 @media (max-height: 720px) {
