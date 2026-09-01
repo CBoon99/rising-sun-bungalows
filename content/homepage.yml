@@ -1,0 +1,182 @@
+hero:
+  image: /assets/web/hero-bungalow.jpg
+  image_alt: Lumbung bungalow at Rising Sun Bungalows, Gili Meno
+  wordmark: Rising Sun
+  product: Bungalows
+  place: Gili Meno · Lombok
+  tagline: |
+    Slow mornings.
+    Star-filled nights.
+  lead: Sasak-style lumbung bungalows two minutes from the harbour—tropical, unhurried, and perfectly placed for turtles, diving, and sunset walks. Not a pub crawl. Not a wellness retreat. Just the island.
+  cta_primary_label: From 500K IDR / night
+  cta_secondary_label: Monthly rates
+
+stats:
+  - value: 2 min
+    label: From harbour
+  - value: No cars
+    label: Bikes & cidomo
+  - value: 5 min boat
+    label: To Gili T & Air
+  - value: ~1.5 hr
+    label: Fast boat from Bali
+
+stay:
+  eyebrow: Stay
+  heading: |
+    Lumbung bungalows
+    on Gili Meno
+  body: Five lumbung bungalows with curved roofs, cool tile floors, and private verandas. AC, mosquito nets, and ensuite bathrooms—simple island comfort without the noise of the party Gilis.
+  price_suffix: IDR / night
+  cta_label: Request dates
+  photos:
+    - image: /assets/web/bungalow-interior.jpg
+      alt: Bungalow bedroom with mosquito net
+    - image: /assets/web/bungalow-exterior-stone.jpg
+      alt: Bungalow exterior through garden
+    - image: /assets/web/veranda.jpg
+      alt: Private veranda seating
+    - image: /assets/web/bungalow-entrance.jpg
+      alt: Bungalow entrance with bamboo chimes
+  gallery:
+    - image: /assets/web/bungalow-4.jpg
+      alt: Bungalow 4 entrance
+      wide: false
+    - image: /assets/web/bungalow-3.jpg
+      alt: Bungalow 3 entrance
+      wide: false
+    - image: /assets/web/bungalow-5.jpg
+      alt: Bungalow 5 at golden hour
+      wide: false
+    - image: /assets/web/bungalow-detail.jpg
+      alt: Interior bamboo details
+      wide: false
+    - image: /assets/web/garden-path.jpg
+      alt: Garden path and greenery
+      wide: false
+    - image: /assets/web/hammock.jpg
+      alt: Hammock under the trees
+      wide: false
+    - image: /assets/web/bikes-gazebo.jpg
+      alt: Island bikes and thatched gazebo
+      wide: true
+
+long_stay:
+  eyebrow: Longer stays
+  heading: |
+    Stay a month.
+    Work from Meno.
+  body: We're building a soft landing for remote workers and slow travellers—garden space, reliable Wi-Fi, and a workspace setup so you can take calls without the Trawangan soundtrack.
+  bullets:
+    - Wi-Fi suited for video calls and remote work
+    - Workspace / desk space in a calm garden setting
+    - Monthly rates — ask us for the current offer
+    - Pair with morning dives at Meno Dive Club
+  cta_primary_label: Enquire for monthly rate
+  cta_secondary_label: Island life on IG
+  image: /assets/web/veranda.jpg
+  image_alt: Veranda workspace vibe at Rising Sun Bungalows
+  pill_label: From
+  pill_title: Monthly rate on request
+  pill_note: Mention "long stay" in your booking message
+
+cafe:
+  eyebrow: On site
+  heading: Our cafe combi
+  body: The yellow VW is already parked under the thatch—coffee, cold drinks, and island bites are on the way. We're finishing the fit-out now; in the meantime, enjoy the garden and hammocks.
+  note: Follow along for the opening date—we'll post it on Instagram first.
+  badge: Opening soon
+  show_badge: true
+  image: /assets/web/cafe-combi.jpg
+  image_alt: Yellow VW combi cafe van at Rising Sun Bungalows — opening soon
+  cta_label: Follow for cafe news
+
+island:
+  heading: The untouched Gili
+  intro: Gili Meno is the smallest of the three Gili Islands, off northwest Lombok — first choice when you want the Gilis without the 18–25 pub crawls of Trawangan, or a dense hippie / healer / life-coach circuit. Bicycles, beach time, real reefs, and room to breathe.
+  features:
+    - icon: turtle
+      title: Turtles & shallow reefs
+      body: Turtle City and east-coast snorkelling deliver daily encounters with green and hawksbill turtles over gardens of hard coral.
+    - icon: wall
+      title: Wall dives nearby
+      body: Meno Wall, Secret Reef, Bounty Wreck, and classic Gili sites sit minutes away by boat—turtles, macro, and seasonal surprises.
+    - icon: traffic
+      title: No traffic stress
+      body: Pedal the island loop in under two hours, hop a cidomo cart, or simply walk the shoreline—no scooters, no gridlock.
+  cards:
+    - image: /assets/web/beach-boat.jpg
+      alt: Jukung boat and beach on Gili Meno
+      title: Beach walks & boats
+      body: White sand, jukungs on the tide line, and golden-hour light—minutes from the bungalows.
+    - image: /assets/web/bikes-gazebo.jpg
+      alt: Bicycles and thatched gazebo on Gili Meno
+      title: Bikes & shade
+      body: "Borrow island pace: pedal the loop, then rest under a thatched bale between snorkels."
+    - image: /assets/web/dive-turtle-close.jpg
+      alt: Sea turtle resting on the reef, Gili Meno
+      title: Snorkel with turtles
+      body: Shallow sites along Meno's coast suit beginners—early mornings mean glassy water and fewer day-trip crowds.
+  cta_label: How to get here
+
+diving:
+  eyebrow: Partner dive centre
+  heading: |
+    Diving with
+    Meno Dive Club
+  body: Book your stay with us, then dive with [Meno Dive Club](https://www.menodiveclub.com)—the family-run SSI dive centre on Gili Meno (est. 2018). Fun dives, Discover Scuba, full SSI courses, eco training, and Dive & Stay packages.
+  bullets:
+    - "Sites: Meno Wall, Turtle City, Bounty Wreck, Secret Reef, Bio Rock"
+    - Beginners to advanced — small groups, patient instructors
+    - Macro heaven, turtles on most dives, seasonal sharks and rays
+    - 4.9 on Google · family-operated since 2018
+  cta_label: Explore Meno Dive Club
+  overlay_title: Pack your logbook
+  overlay_text: Pair bungalow nights with morning two-tank trips
+  image_main: /assets/web/dive-turtle.jpg
+  image_main_alt: Diver with sea turtle on the reef — Meno Dive Club
+  image_pool: /assets/web/dive-pool.jpg
+  image_pool_alt: SSI pool training at Meno Dive Club
+  image_fins: /assets/web/dive-fins.jpg
+  image_fins_alt: Diver entering the water from the boat
+
+get_there:
+  eyebrow: Logistics
+  heading: How to get there
+  intro: We're less than 2 minutes on foot from Gili Meno harbour. No cars or scooters on the Gilis—walk, bike, or cidomo once you land.
+  routes:
+    - kicker: From Bali
+      title: Fast boat
+      body: About 1.5–2 hours from Sanur, Serangan, or Padang Bai. Some boats call at Trawangan or Air first—hop a short inter-island boat to Meno if needed.
+    - kicker: From Lombok
+      title: Bangsal boat
+      body: Public or private boat from Bangsal harbour (or nearby ports) — typically 20–40 minutes to Gili Meno harbour.
+    - kicker: Airport LOP
+      title: Fly, road, boat
+      body: Lombok International Airport to Bangsal by road (about 1–1.5 hrs depending on traffic), then boat to Meno. Ask when booking for driver pointers.
+    - kicker: Gili T or Air
+      title: Island hop
+      body: Short public or private boat between the three Gilis — usually 5–20 minutes. Easy if you're already in the archipelago.
+  landing_heading: Once you land on Meno
+  steps:
+    - Step off at **Gili Meno harbour**.
+    - Less than a **2-minute walk** — message us your arrival boat and we'll meet you or send pin directions.
+    - Luggage? A **cidomo** (horse cart) can drop you at the gate for a small fee if you prefer not to walk.
+  tip: "Tip: morning boats are calmer. If seas look rough, ask your operator—schedules shift with weather."
+  cta_label: Tell us your arrival plans
+  map_caption: Approximate pin near Gili Meno harbour — we'll refine walking directions when you book.
+
+book:
+  heading: Request your dates
+  lead: 500.000 IDR per night · Monthly rates available · No payment on this form—we confirm by email, usually within half a day.
+  note: Mention long stay, diving plans, or cafe questions in your message.
+  submit_label: Send booking request
+  form_footnote: Submitted securely via Netlify Forms.
+  message_placeholder: Diving plans, monthly rate, workspace needs, special occasions...
+  stay_types:
+    - value: nightly
+      label: Nightly stay
+    - value: monthly
+      label: Monthly / long stay
+    - value: dive-stay
+      label: Dive and stay

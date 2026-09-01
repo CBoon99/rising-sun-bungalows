@@ -1,4 +1,8 @@
-# Rising Sun Bungalows — https://rising-sun-bungalows.netlify.app
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# {{ settings.business_name }} — {{ settings.site_url }}
 User-agent: *
 Allow: /
 
@@ -42,5 +46,7 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://rising-sun-bungalows.netlify.app/sitemap.xml
-Host: https://rising-sun-bungalows.netlify.app
+Disallow: /admin/
+
+Sitemap: {{ settings.site_url }}/sitemap.xml
+Host: {{ settings.site_url }}

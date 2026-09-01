@@ -1,0 +1,18 @@
+{
+  "name": "rising-sun-bungalows",
+  "private": true,
+  "description": "Rising Sun Bungalows — Gili Meno static site with Decap CMS",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --port=8080",
+    "cms": "npx --yes decap-server"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "js-yaml": "^4.1.1",
+    "markdown-it": "^14.1.0"
+  }
+}

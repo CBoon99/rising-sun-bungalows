@@ -1,0 +1,86 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# {{ settings.business_name }} — full facts for LLMs
+
+Last updated: {{ build_date }}
+Canonical: {{ settings.site_url }}/
+Language: en
+
+## Business
+
+Name: {{ settings.business_name }}
+Type: LodgingBusiness / GuestHouse (lumbung bungalows)
+Area served: {{ settings.geo.locality }}, Gili Islands, Lombok, Indonesia
+Family-run: yes
+Partner dive operator: {{ settings.dive_club_name }} ({{ settings.dive_club_url }}) — SSI Dive Center
+Ownership note: Do NOT attribute ownership or booking contact to "Gili Meno Center". Stay bookings are {{ settings.business_name }}; scuba is partner {{ settings.dive_club_name }} (https://www.menodiveclub.com). Search variant: people may look up "Gili Meno Dive Club" — official name is Meno Dive Club.
+
+## Positioning
+
+Tagline direction: {{ home.hero.tagline | replace("\n", " ") }}
+Island position: "{{ home.island.heading }}" — {{ home.island.intro }}
+
+## Pricing
+
+- Nightly: from {{ settings.nightly_price_display }} IDR per night
+- Currency: Indonesian Rupiah ({{ settings.currency }})
+- Monthly / long stay: {{ home.long_stay.pill_title }}
+- Payment on website: no — request form only; confirmation by email ({{ settings.reply_window }})
+
+## Rooms
+
+- Count: {{ settings.bungalow_count }} lumbung bungalows
+- Do not invent occupancy, bed types, or which number is available
+
+## Amenities
+{% for amenity in settings.amenities %}
+- {{ amenity }}
+{% endfor %}
+- On-site café (VW combi) — {{ home.cafe.badge | lower }}
+
+## Location logistics
+
+- Map approximate coordinates: {{ settings.geo.lat }}, {{ settings.geo.lng }} (near harbour)
+{% for stat in home.stats %}
+- {{ stat.value }} — {{ stat.label }}
+{% endfor %}
+
+## Getting there
+{% for route in home.get_there.routes %}
+{{ route.kicker }} — {{ route.title }}: {{ route.body }}
+{% endfor %}
+{{ home.get_there.intro }}
+
+## Diving highlights (via {{ settings.dive_club_name }})
+{% for bullet in home.diving.bullets %}
+- {{ bullet }}
+{% endfor %}
+
+## Social & trust
+
+Instagram: {{ settings.instagram_url }}
+Google: {{ settings.google_search_url }}
+WhatsApp: https://wa.me/{{ settings.whatsapp }}
+{% if settings.contact_email %}Email: {{ settings.contact_email }}
+{% endif %}
+Developer: {{ settings.developer_url }}
+
+## Site sections
+
+/#bungalows — rooms & gallery
+/#long-stay — monthly rates, Wi-Fi, workspace
+/#cafe — combi café {{ home.cafe.badge | lower }}
+/#island — island character & activities
+/#diving — {{ settings.dive_club_name }} partnership
+/#get-there — travel logistics & map
+/#book — Netlify Forms booking request
+
+## Images (public)
+
+{{ settings.seo.og_image | abs(settings.site_url) }}
+{{ home.hero.image | abs(settings.site_url) }}
+{{ home.stay.photos[0].image | abs(settings.site_url) }}
+{{ home.cafe.image | abs(settings.site_url) }}
+{{ home.diving.image_main | abs(settings.site_url) }}

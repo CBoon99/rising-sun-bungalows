@@ -27,6 +27,7 @@
       localStorage.setItem("rsb-theme", mode);
     } catch (e) {}
     if (window.__rsbSetThreeTheme) window.__rsbSetThreeTheme(dark);
+    if (themeBtn) themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
   }
 
   function initTheme() {
@@ -57,6 +58,11 @@
     if (!menuDrawer || !menuBtn) return;
     menuDrawer.classList.toggle("is-open", open);
     menuDrawer.setAttribute("aria-hidden", open ? "false" : "true");
+    if ("inert" in menuDrawer) menuDrawer.inert = !open;
+    menuDrawer.querySelectorAll("a, button").forEach(function (el) {
+      if (el.id === "menu-backdrop") return;
+      el.tabIndex = open ? 0 : -1;
+    });
     menuBtn.classList.toggle("is-open", open);
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
@@ -80,6 +86,7 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") setMenu(false);
     });
+    setMenu(false);
   }
 
   /* ---------- year ---------- */
@@ -93,7 +100,8 @@
   });
 
   /* ---------- GSAP ---------- */
-  if (window.gsap && window.ScrollTrigger) {
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.utils.toArray(".fade-up").forEach(function (el) {
       gsap.fromTo(
@@ -108,22 +116,60 @@
         }
       );
     });
-  } else {
-    document.querySelectorAll(".fade-up").forEach(function (el) {
-      el.style.opacity = "1";
-      el.style.transform = "none";
-    });
   }
 
   /* ---------- map ---------- */
-  if (window.L && document.getElementById("map")) {
-    var map = L.map("map", { scrollWheelZoom: false }).setView([-8.3495, 116.055], 15);
+  function initMap() {
+    if (!window.L || !document.getElementById("map")) return;
+    var rsb = window.__RSB || {};
+    var lat = typeof rsb.lat === "number" ? rsb.lat : -8.35;
+    var lng = typeof rsb.lng === "number" ? rsb.lng : 116.0545;
+    var harbourLat = lat + 0.0005;
+    var harbourLng = lng + 0.0005;
+    var map = L.map("map", { scrollWheelZoom: false }).setView([harbourLat, harbourLng], 15);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "OpenStreetMap",
       maxZoom: 19,
     }).addTo(map);
-    L.marker([-8.35, 116.0545]).addTo(map).bindPopup("<b>Rising Sun Bungalows</b><br>Near Gili Meno harbour");
-    L.marker([-8.3495, 116.055]).addTo(map).bindPopup("Gili Meno harbour");
+    L.marker([lat, lng])
+      .addTo(map)
+      .bindPopup("<b>" + (rsb.name || "Rising Sun Bungalows") + "</b><br>" + (rsb.map_popup || "Near Gili Meno harbour"));
+    L.marker([harbourLat, harbourLng])
+      .addTo(map)
+      .bindPopup(rsb.harbour_popup || "Gili Meno harbour");
+  }
+
+  function loadLeaflet(cb) {
+    if (window.L) {
+      cb();
+      return;
+    }
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+    document.head.appendChild(css);
+    var s = document.createElement("script");
+    s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    s.onload = cb;
+    document.head.appendChild(s);
+  }
+
+  var mapEl = document.getElementById("map");
+  if (mapEl) {
+    if ("IntersectionObserver" in window) {
+      var mapIo = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting) {
+            mapIo.disconnect();
+            loadLeaflet(initMap);
+          }
+        },
+        { rootMargin: "240px" }
+      );
+      mapIo.observe(mapEl);
+    } else {
+      loadLeaflet(initMap);
+    }
   }
 
   /* ---------- booking form ---------- */
@@ -134,12 +180,18 @@
 
   var bookingForm = document.querySelector('form[name="booking"]');
   if (bookingForm) {
+    var dateError = document.getElementById("date-error");
     bookingForm.addEventListener("submit", function (e) {
       var cin = bookingForm.querySelector("#check-in").value;
       var cout = bookingForm.querySelector("#check-out").value;
       if (cin && cout && cout <= cin) {
         e.preventDefault();
-        alert("Please choose a check-out date after check-in.");
+        if (dateError) {
+          dateError.hidden = false;
+          dateError.focus && dateError.focus();
+        }
+      } else if (dateError) {
+        dateError.hidden = true;
       }
     });
   }
@@ -275,17 +327,29 @@
     }
   }
 
-  // Load Three from CDN if not present
-  if (window.THREE) {
-    initThree();
-  } else {
+  function loadThree() {
+    if (reduceMotion) {
+      var c = document.getElementById("hero-canvas");
+      if (c) c.style.display = "none";
+      return;
+    }
+    if (window.THREE) {
+      initThree();
+      return;
+    }
     var s = document.createElement("script");
     s.src = "https://unpkg.com/three@0.160.0/build/three.min.js";
     s.onload = initThree;
     s.onerror = function () {
-      var c = document.getElementById("hero-canvas");
-      if (c) c.style.display = "none";
+      var canvas = document.getElementById("hero-canvas");
+      if (canvas) canvas.style.display = "none";
     };
     document.head.appendChild(s);
+  }
+
+  if (window.requestIdleCallback) {
+    window.requestIdleCallback(loadThree, { timeout: 2500 });
+  } else {
+    window.setTimeout(loadThree, 1200);
   }
 })();

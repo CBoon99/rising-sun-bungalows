@@ -1,0 +1,48 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>{{ settings.site_url }}/</loc>
+    <lastmod>{{ build_date }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ settings.site_url }}/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ settings.site_url }}/"/>
+    <image:image>
+      <image:loc>{{ settings.seo.og_image | abs(settings.site_url) }}</image:loc>
+      <image:title>{{ settings.business_name }} — {{ settings.geo.locality }}</image:title>
+      <image:caption>{{ settings.seo.og_image_alt }}</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>{{ home.hero.image | abs(settings.site_url) }}</image:loc>
+      <image:title>Lumbung bungalow exterior</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>{{ home.cafe.image | abs(settings.site_url) }}</image:loc>
+      <image:title>{{ home.cafe.heading }}</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>{{ settings.site_url }}/llms.txt</loc>
+    <lastmod>{{ build_date }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>{{ settings.site_url }}/llms-full.txt</loc>
+    <lastmod>{{ build_date }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>{{ settings.site_url }}/agents.txt</loc>
+    <lastmod>{{ build_date }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+</urlset>

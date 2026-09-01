@@ -1,7 +1,11 @@
+---
+permalink: /site.webmanifest
+eleventyExcludeFromCollections: true
+---
 {
-  "name": "Rising Sun Bungalows",
-  "short_name": "Rising Sun",
-  "description": "Sasak-style lumbung bungalows on Gili Meno — the untouched Gili. From 500K IDR/night.",
+  "name": {{ settings.business_name | json | safe }},
+  "short_name": {{ settings.short_name | json | safe }},
+  "description": {{ settings.seo.description | json | safe }},
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fafaf9",

@@ -1,0 +1,82 @@
+site_url: https://rising-sun-bungalows.netlify.app
+business_name: Rising Sun Bungalows
+short_name: Rising Sun
+brand_mark: RS
+place_short: Gili Meno
+product_name: Bungalows
+location_line: Gili Meno, Lombok, Indonesia
+alternate_names:
+  - Rising Sun Bungalows Gili Meno
+  - RS Bungalows Meno
+logo: /assets/logo.svg
+
+bungalow_count: 5
+nightly_price: "500000"
+nightly_price_display: "500.000"
+price_range: IDR 500000+
+currency: IDR
+payment_accepted: Cash, Bank Transfer
+checkin: "14:00"
+checkout: "11:00"
+pets_allowed: false
+reply_window: We normally reply within 12 hours.
+
+whatsapp: "6281917137769"
+whatsapp_message: "Hi Rising Sun Bungalows — I'd like to ask about a stay on Gili Meno."
+contact_email: risingsunbungalows@gmail.com
+instagram_url: https://www.instagram.com/risingsunbungalows/
+google_search_url: https://www.google.com/search?q=Rising+Sun+Bungalows+Gili+Meno
+dive_club_name: Meno Dive Club
+dive_club_url: https://www.menodiveclub.com
+developer_url: https://boonmind.io
+developer_name: boonmind.io
+
+geo:
+  lat: -8.3500
+  lng: 116.0545
+  locality: Gili Meno
+  region: West Nusa Tenggara
+  country: ID
+map_popup: Near Gili Meno harbour
+harbour_popup: Gili Meno harbour
+
+lodging_description: "Five traditional Sasak-style lumbung bungalows on Gili Meno, less than two minutes from the harbour. Nightly from 500.000 IDR; monthly rates on request. Partner dive centre: Meno Dive Club."
+
+seo:
+  title: "Rising Sun Bungalows | Gili Meno bungalows, Lombok"
+  description: "Five Sasak lumbung bungalows on Gili Meno, 2 min from the harbour. From 500.000 IDR/night. Monthly rates and Wi-Fi. Dive with partner Meno Dive Club."
+  keywords: "Rising Sun Bungalows, Gili Meno bungalows, Gili Meno accommodation, lumbung bungalow Lombok, Gili Meno dive stay, Meno Dive Club, Gili Meno Dive Club, long stay Gili Meno, Gili Islands, how to get to Gili Meno, Gili Meno harbour bungalows, Bali fast boat Gili Meno, Bangsal"
+  og_title: "Rising Sun Bungalows | Gili Meno — The Untouched Gili"
+  og_description: "Five lumbung bungalows, 2 min from the harbour. From 500.000 IDR/night. Monthly rates. Dive with partner Meno Dive Club."
+  og_image: /assets/web/og-image.jpg
+  og_image_alt: Lumbung bungalow at Rising Sun Bungalows, Gili Meno
+  twitter_title: Rising Sun Bungalows | Gili Meno
+  twitter_description: Lumbung bungalows on Gili Meno — turtles, diving, monthly rates. From 500.000 IDR/night.
+
+amenities:
+  - Air conditioning
+  - Free Wi-Fi
+  - Private veranda
+  - Ensuite bathroom
+  - Mosquito net
+  - Workspace / long-stay friendly
+
+nav:
+  book_label: Book
+  menu_cta: Request dates
+  menu_meta: Jump to any section — Gili Meno, two minutes from the harbour.
+  items:
+    - label: Stay
+      href: "#bungalows"
+    - label: Long stay
+      href: "#long-stay"
+    - label: Cafe
+      href: "#cafe"
+    - label: Island
+      href: "#island"
+    - label: Diving
+      href: "#diving"
+    - label: How to get there
+      href: "#get-there"
+    - label: Book
+      href: "#book"

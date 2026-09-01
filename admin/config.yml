@@ -1,0 +1,295 @@
+local_backend: true
+locale: en
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'content: create {{collection}} "{{slug}}"'
+    update: 'content: update {{collection}} "{{slug}}"'
+    delete: 'content: delete {{collection}} "{{slug}}"'
+    uploadMedia: "content: upload {{path}}"
+    deleteMedia: "content: delete {{path}}"
+
+logo_url: /assets/logo.svg
+site_url: https://rising-sun-bungalows.netlify.app
+display_url: https://rising-sun-bungalows.netlify.app
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: settings
+    label: Site settings
+    files:
+      - name: settings
+        label: Site settings
+        file: content/settings.yml
+        fields:
+          - { label: Site URL, name: site_url, widget: string }
+          - { label: Business name, name: business_name, widget: string }
+          - { label: Short name, name: short_name, widget: string }
+          - { label: Brand mark (two letters), name: brand_mark, widget: string }
+          - { label: Place (short), name: place_short, widget: string }
+          - { label: Product name, name: product_name, widget: string }
+          - { label: Location line, name: location_line, widget: string }
+          - label: Alternate names
+            name: alternate_names
+            widget: list
+          - { label: Logo, name: logo, widget: image }
+          - { label: Lodging description (Google), name: lodging_description, widget: text }
+          - { label: Number of bungalows, name: bungalow_count, widget: number, value_type: int, min: 1 }
+          - { label: Nightly price (number, for Google), name: nightly_price, widget: string, hint: "Digits only, e.g. 500000" }
+          - { label: Nightly price (display), name: nightly_price_display, widget: string, hint: "How it appears on the page, e.g. 500.000" }
+          - { label: Price range (schema), name: price_range, widget: string }
+          - { label: Currency, name: currency, widget: string }
+          - { label: Payment accepted, name: payment_accepted, widget: string }
+          - { label: Check-in, name: checkin, widget: string }
+          - { label: Check-out, name: checkout, widget: string }
+          - { label: Pets allowed, name: pets_allowed, widget: boolean, default: false }
+          - { label: Reply window, name: reply_window, widget: string }
+          - { label: WhatsApp number, name: whatsapp, widget: string, hint: "Country code + number, digits only, e.g. 6281917137769" }
+          - { label: WhatsApp prefill message, name: whatsapp_message, widget: text }
+          - { label: Booking email, name: contact_email, widget: string }
+          - { label: Instagram URL, name: instagram_url, widget: string }
+          - { label: Google search URL, name: google_search_url, widget: string }
+          - { label: Dive club name, name: dive_club_name, widget: string }
+          - { label: Dive club URL, name: dive_club_url, widget: string }
+          - { label: Developer URL, name: developer_url, widget: string }
+          - { label: Developer name, name: developer_name, widget: string }
+          - label: Map / address
+            name: geo
+            widget: object
+            fields:
+              - { label: Latitude, name: lat, widget: number, value_type: float }
+              - { label: Longitude, name: lng, widget: number, value_type: float }
+              - { label: Locality, name: locality, widget: string }
+              - { label: Region, name: region, widget: string }
+              - { label: Country code, name: country, widget: string }
+          - { label: Map popup (bungalows), name: map_popup, widget: string }
+          - { label: Map popup (harbour), name: harbour_popup, widget: string }
+          - label: Search / social
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Browser title, name: title, widget: string }
+              - { label: Meta description, name: description, widget: text }
+              - { label: Keywords, name: keywords, widget: text }
+              - { label: Facebook / WhatsApp title, name: og_title, widget: string }
+              - { label: Facebook / WhatsApp description, name: og_description, widget: text }
+              - { label: Share image (1200×630), name: og_image, widget: image }
+              - { label: Share image alt, name: og_image_alt, widget: string }
+              - { label: Twitter title, name: twitter_title, widget: string }
+              - { label: Twitter description, name: twitter_description, widget: text }
+          - label: Amenities (Google)
+            name: amenities
+            widget: list
+          - label: Navigation
+            name: nav
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Book button, name: book_label, widget: string }
+              - { label: Menu CTA, name: menu_cta, widget: string }
+              - { label: Menu note, name: menu_meta, widget: string }
+              - label: Menu links
+                name: items
+                widget: list
+                summary: "{{label}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+
+  - name: pages
+    label: Pages
+    files:
+      - name: homepage
+        label: Homepage
+        file: content/homepage.yml
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Photo, name: image, widget: image }
+              - { label: Photo alt text, name: image_alt, widget: string }
+              - { label: Wordmark, name: wordmark, widget: string }
+              - { label: Product line, name: product, widget: string }
+              - { label: Place line, name: place, widget: string }
+              - { label: Tagline, name: tagline, widget: text, hint: "Line break = new line on the page" }
+              - { label: Lead paragraph, name: lead, widget: text }
+              - { label: Primary button, name: cta_primary_label, widget: string }
+              - { label: Secondary button, name: cta_secondary_label, widget: string }
+          - label: Key facts
+            name: stats
+            widget: list
+            summary: "{{value}} — {{label}}"
+            fields:
+              - { label: Value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Stay
+            name: stay
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: text }
+              - { label: Body, name: body, widget: text }
+              - { label: Price suffix, name: price_suffix, widget: string }
+              - { label: Button, name: cta_label, widget: string }
+              - label: Feature photos
+                name: photos
+                widget: list
+                summary: "{{alt}}"
+                fields:
+                  - { label: Photo, name: image, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Gallery
+                name: gallery
+                widget: list
+                summary: "{{alt}}"
+                fields:
+                  - { label: Photo, name: image, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Wide (span two columns), name: wide, widget: boolean, default: false }
+          - label: Long stay
+            name: long_stay
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: text }
+              - { label: Body, name: body, widget: text }
+              - label: Bullets
+                name: bullets
+                widget: list
+              - { label: Primary button, name: cta_primary_label, widget: string }
+              - { label: Instagram button, name: cta_secondary_label, widget: string }
+              - { label: Photo, name: image, widget: image }
+              - { label: Photo alt, name: image_alt, widget: string }
+              - { label: Price pill label, name: pill_label, widget: string }
+              - { label: Price pill title, name: pill_title, widget: string }
+              - { label: Price pill note, name: pill_note, widget: string }
+          - label: Cafe
+            name: cafe
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Body, name: body, widget: text }
+              - { label: Note, name: note, widget: text }
+              - { label: Show badge, name: show_badge, widget: boolean, default: true }
+              - { label: Badge text, name: badge, widget: string }
+              - { label: Photo, name: image, widget: image }
+              - { label: Photo alt, name: image_alt, widget: string }
+              - { label: Button, name: cta_label, widget: string }
+          - label: Island
+            name: island
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - label: Feature cards
+                name: features
+                widget: list
+                summary: "{{title}}"
+                fields:
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    options: [turtle, wall, traffic]
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+              - label: Photo cards
+                name: cards
+                widget: list
+                summary: "{{title}}"
+                fields:
+                  - { label: Photo, name: image, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+              - { label: Button, name: cta_label, widget: string }
+          - label: Diving
+            name: diving
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: text }
+              - { label: Body (links allowed as [text](url)), name: body, widget: markdown }
+              - label: Bullets
+                name: bullets
+                widget: list
+              - { label: Button, name: cta_label, widget: string }
+              - { label: Overlay title, name: overlay_title, widget: string }
+              - { label: Overlay text, name: overlay_text, widget: string }
+              - { label: Main photo, name: image_main, widget: image }
+              - { label: Main photo alt, name: image_main_alt, widget: string }
+              - { label: Pool photo, name: image_pool, widget: image }
+              - { label: Pool photo alt, name: image_pool_alt, widget: string }
+              - { label: Fins photo, name: image_fins, widget: image }
+              - { label: Fins photo alt, name: image_fins_alt, widget: string }
+          - label: How to get there
+            name: get_there
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - label: Routes
+                name: routes
+                widget: list
+                summary: "{{kicker}} — {{title}}"
+                fields:
+                  - { label: Kicker, name: kicker, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+              - { label: Landing heading, name: landing_heading, widget: string }
+              - label: Steps
+                name: steps
+                widget: list
+                hint: "Bold with **double asterisks**"
+              - { label: Tip, name: tip, widget: text }
+              - { label: Button, name: cta_label, widget: string }
+              - { label: Map caption, name: map_caption, widget: string }
+          - label: Book
+            name: book
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Lead, name: lead, widget: text }
+              - { label: Note, name: note, widget: text }
+              - { label: Submit button, name: submit_label, widget: string }
+              - { label: Form footnote, name: form_footnote, widget: string }
+              - { label: Message placeholder, name: message_placeholder, widget: string }
+              - label: Stay types
+                name: stay_types
+                widget: list
+                summary: "{{label}}"
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+
+      - name: thank-you
+        label: Thank-you page
+        file: content/thank-you.yml
+        fields:
+          - { label: Browser title, name: title, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Meta description, name: description, widget: text }
+          - { label: Body (links as [text](url)), name: body, widget: markdown }
+          - { label: Back button, name: back_label, widget: string }
+
+  - name: faqs
+    label: FAQs (Google)
+    files:
+      - name: faqs
+        label: FAQs
+        file: content/faqs.yml
+        fields:
+          - label: Questions
+            name: items
+            widget: list
+            summary: "{{question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }

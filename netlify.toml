@@ -1,9 +1,13 @@
-# Static HTML — everything lives at repo root (index.html, assets/, thank-you.html).
+# Eleventy build from src/ + content/*.yml. CMS at /admin (Decap + Netlify Identity).
 # Netlify UI: Base directory = empty · Production branch = main
+# After first CMS deploy: enable Identity (invite only) + Git Gateway.
 # Production domain used in canonical/OG: https://rising-sun-bungalows.netlify.app
 [build]
-  command = "true"
-  publish = "."
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "18"
 
 [[headers]]
   for = "/*"
@@ -22,6 +26,11 @@
   for = "/assets/web/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
 
 [[headers]]
   for = "/robots.txt"
@@ -62,3 +71,15 @@
   from = "/favicon.ico"
   to = "/assets/favicon.ico"
   status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"

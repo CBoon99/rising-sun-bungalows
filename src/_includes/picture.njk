@@ -1,0 +1,18 @@
+{% set path = src | asset %}
+{% set meta = path | imgmeta %}
+<picture{% if wrapClass %} class="{{ wrapClass }}"{% endif %}>
+  <source type="image/webp" srcset="{{ path | w800 | towebp }} 800w, {{ path | towebp }} {{ meta.w }}w" sizes="{{ sizes or '100vw' }}">
+  <img
+    src="{{ path }}"
+    srcset="{{ path | w800 }} 800w, {{ path }} {{ meta.w }}w"
+    sizes="{{ sizes or '100vw' }}"
+    alt="{{ alt }}"
+    width="{{ meta.w }}"
+    height="{{ meta.h }}"
+    {% if imgClass %}class="{{ imgClass }}"{% endif %}
+    {% if id %}id="{{ id }}"{% endif %}
+    {% if fetchpriority %}fetchpriority="{{ fetchpriority }}" loading="eager"{% else %}loading="{{ loading or 'lazy' }}"{% endif %}
+    decoding="async"
+    {% if extra %}{{ extra | safe }}{% endif %}
+  >
+</picture>

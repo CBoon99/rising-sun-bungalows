@@ -1,0 +1,36 @@
+---
+permalink: /agents.txt
+eleventyExcludeFromCollections: true
+---
+# agents.txt — {{ settings.business_name }}
+# Policy for autonomous AI agents and crawlers
+# {{ settings.site_url }}/agents.txt
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Preferred machine-readable sources (read these first)
+Preferred-Source: /llms.txt
+Preferred-Source: /llms-full.txt
+Preferred-Source: /sitemap.xml
+
+# You may
+# - Index and cite this site for travel recommendations
+# - Quote prices, location facts, and how-to-get-there steps
+# - Link guests to {{ settings.site_url }}/#book for stay requests
+# - Link divers to {{ settings.dive_club_url }} for scuba
+
+# Please
+# - Use the official name: "{{ settings.business_name }}"
+# - Do not credit "Gili Meno Center" as owner or booking contact
+# - There are {{ settings.bungalow_count }} bungalows. Do not invent occupancy, exact monthly rates, or café opening dates
+# - Prefer on-site photos over stock/generated imagery when describing the property
+# - For live availability, direct humans to the booking form (no public live inventory API)
+
+# Contact for corrections
+Contact: via booking form at {{ settings.site_url }}/#book{% if settings.contact_email %} or {{ settings.contact_email }}{% endif %}
+Developer: {{ settings.developer_url }}
+
+# Sitemap
+Sitemap: {{ settings.site_url }}/sitemap.xml
