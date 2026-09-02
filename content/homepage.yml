@@ -7,7 +7,7 @@ hero:
   tagline: |
     Slow mornings.
     Star-filled nights.
-  lead: Sasak-style lumbung bungalows two minutes from the harbour—tropical, unhurried, and perfectly placed for turtles, diving, and sunset walks. Not a pub crawl. Not a wellness retreat. Just the island.
+  lead: Five Sasak-style lumbung bungalows on Gili Meno — the quiet Gili Island off northwest Lombok — less than two minutes from the harbour. Operated by Meno Dive Club. From 500.000 IDR a night, with monthly rates and Wi-Fi. Book the stay here; dive with Meno Dive Club. Not a Gili Trawangan pub crawl. Just the island.
   cta_primary_label: From 500K IDR / night
   cta_secondary_label: Monthly rates
 
@@ -26,7 +26,7 @@ stay:
   heading: |
     Lumbung bungalows
     on Gili Meno
-  body: Five lumbung bungalows with curved roofs, cool tile floors, and private verandas. AC, mosquito nets, and ensuite bathrooms—simple island comfort without the noise of the party Gilis.
+  body: Five lumbung bungalows on Gili Meno, a two-minute walk from the harbour. Curved roofs, cool tile floors, private verandas, AC, mosquito nets, and ensuite bathrooms. Operated by Meno Dive Club — Gili Islands stay without Gili Trawangan’s party noise.
   price_suffix: IDR / night
   cta_label: Request dates
   photos:
@@ -66,7 +66,7 @@ long_stay:
   heading: |
     Stay a month.
     Work from Meno.
-  body: We're building a soft landing for remote workers and slow travellers—garden space, reliable Wi-Fi, and a workspace setup so you can take calls without the Trawangan soundtrack.
+  body: Monthly Gili Meno stays at Rising Sun Bungalows, operated by Meno Dive Club — garden space, reliable Wi-Fi, and a workspace so you can take calls without the Trawangan soundtrack.
   bullets:
     - Wi-Fi suited for video calls and remote work
     - Workspace / desk space in a calm garden setting
@@ -83,7 +83,7 @@ long_stay:
 cafe:
   eyebrow: On site
   heading: Our cafe combi
-  body: The yellow VW is already parked under the thatch—coffee, cold drinks, and island bites are on the way. We're finishing the fit-out now; in the meantime, enjoy the garden and hammocks.
+  body: The yellow VW combi is parked under the thatch at Rising Sun Bungalows on Gili Meno. Coffee, cold drinks, and island bites are coming; the opening date will be posted on Instagram first.
   note: Follow along for the opening date—we'll post it on Instagram first.
   badge: Opening soon
   show_badge: true
@@ -92,8 +92,8 @@ cafe:
   cta_label: Follow for cafe news
 
 island:
-  heading: The untouched Gili
-  intro: Gili Meno is the smallest of the three Gili Islands, off northwest Lombok — first choice when you want the Gilis without the 18–25 pub crawls of Trawangan, or a dense hippie / healer / life-coach circuit. Bicycles, beach time, real reefs, and room to breathe.
+  heading: The untouched Gili Island
+  intro: Gili Meno is the smallest of the three Gili Islands off northwest Lombok. Stay at Rising Sun Bungalows, less than two minutes from Gili Meno harbour and operated by Meno Dive Club, when you want reefs and turtles without Gili Trawangan’s 18–25 pub crawls.
   features:
     - icon: turtle
       title: Turtles & shallow reefs
@@ -120,11 +120,15 @@ island:
   cta_label: How to get here
 
 diving:
-  eyebrow: Partner dive centre
+  eyebrow: Operated by Meno Dive Club
   heading: |
-    Diving with
-    Meno Dive Club
-  body: Book your stay with us, then dive with [Meno Dive Club](https://www.menodiveclub.com)—the family-run SSI dive centre on Gili Meno (est. 2018). Fun dives, Discover Scuba, full SSI courses, eco training, and Dive & Stay packages.
+    Dive and stay on
+    Gili Meno
+  body: >-
+    Rising Sun Bungalows is operated by [Meno Dive Club](https://www.menodiveclub.com)
+    — the SSI dive centre on Gili Meno (est. 2018). Book your bungalow here, then scuba
+    with the same family. Fun dives, Discover Scuba, full SSI courses, eco training,
+    and Dive and Stay packages. Official name Meno Dive Club (people also search Gili Meno Dive Club).
   bullets:
     - "Sites: Meno Wall, Turtle City, Bounty Wreck, Secret Reef, Bio Rock"
     - Beginners to advanced — small groups, patient instructors
@@ -142,22 +146,22 @@ diving:
 
 get_there:
   eyebrow: Logistics
-  heading: How to get there
-  intro: We're less than 2 minutes on foot from Gili Meno harbour. No cars or scooters on the Gilis—walk, bike, or cidomo once you land.
+  heading: How to get to Gili Meno
+  intro: Rising Sun Bungalows is less than 2 minutes on foot from Gili Meno harbour. No cars or scooters on the Gili Islands — walk, bike, or cidomo once you land.
   routes:
     - kicker: From Bali
-      title: Fast boat
-      body: About 1.5–2 hours from Sanur, Serangan, or Padang Bai. Some boats call at Trawangan or Air first—hop a short inter-island boat to Meno if needed.
+      title: Fast boat to the Gilis
+      body: How to get to Gili Meno from Bali — about 1.5–2 hours by fast boat from Sanur, Serangan, or Padang Bai. Some boats call at Gili Trawangan or Gili Air first; hop a short inter-island boat to Meno if needed.
     - kicker: From Lombok
-      title: Bangsal boat
-      body: Public or private boat from Bangsal harbour (or nearby ports) — typically 20–40 minutes to Gili Meno harbour.
+      title: Bangsal harbour boat
+      body: Public or private boat from Bangsal harbour (or nearby ports such as Teluk Nare) — typically 20–40 minutes to Gili Meno harbour.
     - kicker: Airport LOP
-      title: Fly, road, boat
-      body: Lombok International Airport to Bangsal by road (about 1–1.5 hrs depending on traffic), then boat to Meno. Ask when booking for driver pointers.
+      title: Lombok Airport to Meno
+      body: Fly into Lombok International Airport (LOP), road transfer to Bangsal (about 1–1.5 hrs), then boat to Gili Meno. Ask when booking for driver pointers.
     - kicker: Gili T or Air
-      title: Island hop
-      body: Short public or private boat between the three Gilis — usually 5–20 minutes. Easy if you're already in the archipelago.
-  landing_heading: Once you land on Meno
+      title: Island hop the Gilis
+      body: Short public or private boat between Gili Trawangan, Gili Air, and Gili Meno — usually 5–20 minutes. Easy if you are already in the Gili Islands.
+  landing_heading: Once you land at Gili Meno harbour
   steps:
     - Step off at **Gili Meno harbour**.
     - Less than a **2-minute walk** — message us your arrival boat and we'll meet you or send pin directions.
@@ -167,8 +171,8 @@ get_there:
   map_caption: Approximate pin near Gili Meno harbour — we'll refine walking directions when you book.
 
 book:
-  heading: Request your dates
-  lead: 500.000 IDR per night · Monthly rates available · No payment on this form—we confirm by email, usually within half a day.
+  heading: Book Gili Meno bungalows
+  lead: 500.000 IDR per night · five lumbung · monthly rates · operated by Meno Dive Club. No payment on this form — we confirm by email, usually within half a day.
   note: Mention long stay, diving plans, or cafe questions in your message.
   submit_label: Send booking request
   form_footnote: Submitted securely via Netlify Forms.

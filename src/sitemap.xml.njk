@@ -45,4 +45,16 @@ eleventyExcludeFromCollections: true
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>{{ settings.site_url }}/ai.txt</loc>
+    <lastmod>{{ build_date }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>{{ settings.site_url }}/.well-known/ai.json</loc>
+    <lastmod>{{ build_date }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
 </urlset>

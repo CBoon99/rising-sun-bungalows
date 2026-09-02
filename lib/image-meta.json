@@ -5,89 +5,79 @@
     "tw": 800,
     "th": 1067,
     "full_kb": 140.4,
-    "webp_kb": 79.5,
-    "thumb_webp_kb": 56.1
+    "webp_kb": 81.5
   },
   "/assets/web/bikes-gazebo.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 301.3,
-    "webp_kb": 215.1,
-    "thumb_webp_kb": 140.7
+    "full_kb": 315.6,
+    "webp_kb": 276.2
   },
   "/assets/web/bungalow-3.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 251.5,
-    "webp_kb": 154.6,
-    "thumb_webp_kb": 103.5
+    "full_kb": 263.5,
+    "webp_kb": 203.1
   },
   "/assets/web/bungalow-4.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 213.7,
-    "webp_kb": 116.0,
-    "thumb_webp_kb": 80.0
+    "full_kb": 213.6,
+    "webp_kb": 119.6
   },
   "/assets/web/bungalow-5.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 228.6,
-    "webp_kb": 133.7,
-    "thumb_webp_kb": 94.7
+    "full_kb": 228.4,
+    "webp_kb": 136.7
   },
   "/assets/web/bungalow-detail.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 222.9,
-    "webp_kb": 123.9,
-    "thumb_webp_kb": 87.1
+    "full_kb": 222.8,
+    "webp_kb": 129.5
   },
   "/assets/web/bungalow-entrance.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 250.7,
-    "webp_kb": 152.0,
-    "thumb_webp_kb": 104.7
+    "full_kb": 262.9,
+    "webp_kb": 196.6
   },
   "/assets/web/bungalow-exterior-stone.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 208.3,
-    "webp_kb": 115.7,
-    "thumb_webp_kb": 81.6
+    "full_kb": 208.2,
+    "webp_kb": 117.5
   },
   "/assets/web/bungalow-interior.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 180.3,
-    "webp_kb": 93.1,
-    "thumb_webp_kb": 64.1
+    "full_kb": 180.2,
+    "webp_kb": 96.1
   },
   "/assets/web/cafe-combi.jpg": {
     "w": 1400,
     "h": 1050,
     "tw": 800,
     "th": 600,
-    "full_kb": 232.2,
-    "webp_kb": 142.5,
-    "thumb_webp_kb": 61.4
+    "full_kb": 232.1,
+    "webp_kb": 146.7
   },
   "/assets/web/dive-fins.jpg": {
     "w": 933,
@@ -95,8 +85,7 @@
     "tw": 800,
     "th": 1200,
     "full_kb": 214.9,
-    "webp_kb": 132.1,
-    "thumb_webp_kb": 105.8
+    "webp_kb": 132.4
   },
   "/assets/web/dive-pool-heart.jpg": {
     "w": 1400,
@@ -104,8 +93,7 @@
     "tw": 800,
     "th": 534,
     "full_kb": 115.9,
-    "webp_kb": 45.9,
-    "thumb_webp_kb": 19.5
+    "webp_kb": 47.9
   },
   "/assets/web/dive-pool.jpg": {
     "w": 1400,
@@ -113,8 +101,7 @@
     "tw": 800,
     "th": 533,
     "full_kb": 101.0,
-    "webp_kb": 39.3,
-    "thumb_webp_kb": 17.6
+    "webp_kb": 40.5
   },
   "/assets/web/dive-turtle-close.jpg": {
     "w": 1400,
@@ -122,70 +109,62 @@
     "tw": 800,
     "th": 533,
     "full_kb": 210.8,
-    "webp_kb": 130.4,
-    "thumb_webp_kb": 54.3
+    "webp_kb": 133.1
   },
   "/assets/web/dive-turtle.jpg": {
     "w": 1400,
     "h": 933,
     "tw": 800,
     "th": 533,
-    "full_kb": 147.7,
-    "webp_kb": 82.4,
-    "thumb_webp_kb": 36.3
+    "full_kb": 147.6,
+    "webp_kb": 84.5
   },
   "/assets/web/garden-path.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 293.2,
-    "webp_kb": 205.1,
-    "thumb_webp_kb": 134.6
+    "full_kb": 307.6,
+    "webp_kb": 257.8
   },
   "/assets/web/hammock.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 214.9,
-    "webp_kb": 132.0,
-    "thumb_webp_kb": 95.3
+    "full_kb": 214.8,
+    "webp_kb": 133.0
   },
   "/assets/web/hero-bungalow.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 293.0,
-    "webp_kb": 193.7,
-    "thumb_webp_kb": 130.0
+    "full_kb": 307.1,
+    "webp_kb": 250.2
   },
   "/assets/web/og-image.jpg": {
     "w": 1200,
     "h": 630,
     "tw": 800,
     "th": 420,
-    "full_kb": 205.4,
-    "webp_kb": 123.1,
-    "thumb_webp_kb": 65.9
+    "full_kb": 170.0,
+    "webp_kb": 104.2
   },
   "/assets/web/palm.jpg": {
     "w": 1400,
     "h": 933,
     "tw": 800,
     "th": 533,
-    "full_kb": 270.3,
-    "webp_kb": 192.7,
-    "thumb_webp_kb": 82.4
+    "full_kb": 283.8,
+    "webp_kb": 238.9
   },
   "/assets/web/veranda.jpg": {
     "w": 1050,
     "h": 1400,
     "tw": 800,
     "th": 1067,
-    "full_kb": 252.6,
-    "webp_kb": 164.8,
-    "thumb_webp_kb": 114.6
+    "full_kb": 265.0,
+    "webp_kb": 207.4
   }
 }

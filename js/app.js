@@ -328,7 +328,7 @@
   }
 
   function loadThree() {
-    if (reduceMotion) {
+    if (reduceMotion || (window.matchMedia && window.matchMedia("(max-width: 800px)").matches)) {
       var c = document.getElementById("hero-canvas");
       if (c) c.style.display = "none";
       return;

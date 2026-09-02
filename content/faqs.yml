@@ -1,13 +1,31 @@
 items:
-  - question: How much is Rising Sun Bungalows per night?
-    answer: From 500.000 IDR per night. Monthly and long-stay rates are available on request via the booking form.
-  - question: How many bungalows are there?
+  - id: faq-price
+    question: How much is Rising Sun Bungalows per night?
+    answer: From 500.000 IDR per night for a lumbung bungalow on Gili Meno. Monthly and long-stay rates are available on request via the booking form.
+  - id: faq-count
+    question: How many bungalows are there?
     answer: Five traditional Sasak-style lumbung bungalows, each with AC, mosquito net, ensuite bathroom, and a private veranda.
-  - question: How do I get to Rising Sun Bungalows on Gili Meno?
-    answer: From Bali take a fast boat (~1.5–2 hours) to the Gilis. From Lombok take a boat from Bangsal (~20–40 minutes). From Gili Trawangan or Gili Air take a short inter-island boat. The bungalows are about 2 minutes’ walk from Gili Meno harbour. There are no cars or motorbikes on the Gilis.
-  - question: Is there diving at Rising Sun Bungalows?
-    answer: Stay with Rising Sun Bungalows and dive with partner Meno Dive Club — an SSI centre on Gili Meno offering fun dives, beginner experiences, full courses, and Dive & Stay packages.
-  - question: Do you offer monthly rates or remote-work stays?
-    answer: Yes. Longer stays with Wi-Fi and workspace are a growing part of the business. Ask for the current monthly rate on the booking form and select Monthly / long stay.
-  - question: Why stay on Gili Meno instead of Gili Trawangan?
-    answer: Gili Meno is the untouched Gili — first choice if you want turtles, reefs, and island pace without Trawangan’s 18–25 pub-crawl scene or a dense wellness / life-coach circuit.
+  - id: faq-operator
+    question: Who operates Rising Sun Bungalows?
+    answer: Rising Sun Bungalows is operated and run by Meno Dive Club, the SSI dive centre on Gili Meno. Stay bookings are made on this site; scuba is booked with Meno Dive Club at menodiveclub.com. People searching “Gili Meno Dive Club” mean this centre.
+  - id: faq-bali
+    question: How do I get to Gili Meno from Bali?
+    answer: Take a fast boat from Sanur, Serangan, or Padang Bai (about 1.5–2 hours) to the Gili Islands. Some boats land on Gili Trawangan or Gili Air first — hop a short inter-island boat to Gili Meno. Rising Sun Bungalows is less than two minutes’ walk from Gili Meno harbour.
+  - id: faq-lombok
+    question: How do I get to Rising Sun Bungalows from Lombok?
+    answer: Boat from Bangsal harbour (or nearby ports) in about 20–40 minutes to Gili Meno harbour. From Lombok Airport (LOP), transfer by road to Bangsal (about 1–1.5 hours), then boat. There are no cars or motorbikes on the Gilis.
+  - id: faq-dive-stay
+    question: Is there a dive and stay package on Gili Meno?
+    answer: Yes. Book your bungalow at Rising Sun Bungalows and dive with Meno Dive Club — fun dives, Discover Scuba, SSI courses, and Dive and Stay. The bungalows are operated by the dive centre, a short walk from the harbour.
+  - id: faq-monthly
+    question: Do you offer monthly rates or remote-work stays on Gili Meno?
+    answer: Yes. Longer stays with Wi-Fi and workspace are available. Ask for the current monthly rate on the booking form and select Monthly / long stay.
+  - id: faq-trawangan
+    question: Why stay on Gili Meno instead of Gili Trawangan?
+    answer: Gili Meno is the untouched Gili Island — first choice for turtles, reefs, and island pace without Trawangan’s 18–25 pub-crawl scene or a dense wellness / life-coach circuit.
+  - id: faq-contact
+    question: How do I contact Rising Sun Bungalows?
+    answer: Email risingsunbungalows@gmail.com, WhatsApp +62 819 1713 7769, or use the booking form. We normally reply within 12 hours. Scuba is booked separately with Meno Dive Club at menodiveclub.com.
+  - id: faq-pets
+    question: Are pets allowed?
+    answer: No. Pets are not allowed at Rising Sun Bungalows.

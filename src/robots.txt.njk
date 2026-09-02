@@ -3,29 +3,40 @@ permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
 # {{ settings.business_name }} — {{ settings.site_url }}
+# Assistants: /llms.txt · /llms-full.txt · /agents.txt · /ai.txt
+
 User-agent: *
 Allow: /
+Disallow: /admin/
 
-# AI / LLM crawlers — content is available for indexing & citation
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: Applebot-Extended
@@ -46,7 +57,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Disallow: /admin/
-
 Sitemap: {{ settings.site_url }}/sitemap.xml
-Host: {{ settings.site_url }}

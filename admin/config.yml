@@ -55,6 +55,8 @@ collections:
           - { label: Google search URL, name: google_search_url, widget: string }
           - { label: Dive club name, name: dive_club_name, widget: string }
           - { label: Dive club URL, name: dive_club_url, widget: string }
+          - { label: Operator name, name: operator_name, widget: string }
+          - { label: Operator URL, name: operator_url, widget: string }
           - { label: Developer URL, name: developer_url, widget: string }
           - { label: Developer name, name: developer_name, widget: string }
           - label: Map / address

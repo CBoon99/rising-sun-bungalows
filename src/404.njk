@@ -1,0 +1,29 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | {{ settings.business_name }}</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="That page is not on Rising Sun Bungalows. Go home, book a stay, or see how to get to Gili Meno.">
+  <link rel="canonical" href="{{ settings.site_url }}/">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <main class="thanks">
+    <h1 class="display">Page not found</h1>
+    <p>That address is not on Rising Sun Bungalows, Gili Meno.</p>
+    <div class="flex-wrap" style="justify-content:center">
+      <a class="btn btn-primary" href="/">Home</a>
+      <a class="btn btn-ghost" href="/#book">Book a stay</a>
+      <a class="btn btn-ghost" href="/#get-there">How to get to Gili Meno</a>
+      <a class="btn btn-ghost" href="{{ settings.dive_club_url }}" target="_blank" rel="noopener noreferrer">Meno Dive Club</a>
+    </div>
+  </main>
+</body>
+</html>

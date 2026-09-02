@@ -1,0 +1,29 @@
+---
+permalink: /.well-known/ai.json
+eleventyExcludeFromCollections: true
+---
+{
+  "name": {{ settings.business_name | json | safe }},
+  "url": {{ (settings.site_url + "/") | json | safe }},
+  "description": {{ settings.lodging_description | json | safe }},
+  "type": "lodging",
+  "organization": {
+    "name": {{ settings.business_name | json | safe }},
+    "operator": {{ (settings.operator_name or settings.dive_club_name) | json | safe }},
+    "operatorUrl": {{ (settings.operator_url or settings.dive_club_url) | json | safe }},
+    "email": {{ (settings.contact_email or "") | json | safe }},
+    "telephone": {{ ("+" + settings.whatsapp) | json | safe }},
+    "url": {{ (settings.site_url + "/") | json | safe }}
+  },
+  "updated": {{ build_date | json | safe }},
+  "discovery": {
+    "llms": {{ (settings.site_url + "/llms.txt") | json | safe }},
+    "llmsFull": {{ (settings.site_url + "/llms-full.txt") | json | safe }},
+    "agents": {{ (settings.site_url + "/agents.txt") | json | safe }},
+    "ai": {{ (settings.site_url + "/ai.txt") | json | safe }},
+    "humans": {{ (settings.site_url + "/humans.txt") | json | safe }},
+    "sitemap": {{ (settings.site_url + "/sitemap.xml") | json | safe }}
+  },
+  "booking": {{ (settings.site_url + "/#book") | json | safe }},
+  "diveClub": {{ settings.dive_club_url | json | safe }}
+}
