@@ -21,7 +21,9 @@ checkout: "11:00"
 pets_allowed: false
 reply_window: We normally reply within 12 hours.
 
-whatsapp: "6281917137769"
+whatsapp: "6287725533777"
+whatsapp_display: "+62 877-2553-3777"
+whatsapp_contact_name: Gunawan
 whatsapp_message: "Hi Rising Sun Bungalows — I'd like to ask about a stay on Gili Meno."
 contact_email: risingsunbungalows@gmail.com
 instagram_url: https://www.instagram.com/risingsunbungalows/
@@ -42,18 +44,18 @@ geo:
 map_popup: Near Gili Meno harbour
 harbour_popup: Gili Meno harbour
 
-lodging_description: "Rising Sun Bungalows is five Sasak-style lumbung bungalows on Gili Meno, Lombok, operated by Meno Dive Club. Less than two minutes from Gili Meno harbour. From 500.000 IDR per night; monthly rates on request. Book the stay here; scuba with Meno Dive Club."
+lodging_description: "Rising Sun Bungalows is five Sasak-style lumbung bungalows on Gili Meno, Lombok, partner with Meno Dive Club. Less than two minutes from Gili Meno harbour. From 500.000 IDR per night; monthly rates on request. Book the stay here; scuba with Meno Dive Club."
 
 seo:
   title: "Rising Sun Bungalows | Gili Meno bungalows from 500K IDR"
-  description: "Five lumbung bungalows on Gili Meno, 2 min from the harbour. Operated by Meno Dive Club. From 500.000 IDR/night. Fast boat from Bali. Dive and stay."
+  description: "Five lumbung bungalows on Gili Meno, 2 min from the harbour. Partner with Meno Dive Club. From 500.000 IDR/night. Fast boat from Bali. Dive and stay."
   keywords: "Rising Sun Bungalows, Gili Meno bungalows, Gili Meno accommodation, lumbung bungalows Lombok, how to get to Gili Meno from Bali, Gili Meno harbour bungalows, Gili Islands bungalows, Bangsal boat Gili Meno, Gili Meno dive and stay, Meno Dive Club, Gili Meno Dive Club, long stay Gili Meno, Gili Meno vs Gili Trawangan, SSI dive Gili Meno, monthly rent Gili Meno Wi-Fi"
   og_title: "Rising Sun Bungalows | Gili Meno — 5 lumbung from 500K IDR"
-  og_description: "Five harbour-side lumbung bungalows on Gili Meno, Lombok. Operated by Meno Dive Club. From 500.000 IDR/night. Fast boat from Bali. Dive and stay."
+  og_description: "Five harbour-side lumbung bungalows on Gili Meno, Lombok. Partner with Meno Dive Club. From 500.000 IDR/night. Fast boat from Bali. Dive and stay."
   og_image: /assets/web/og-image.jpg
-  og_image_alt: Rising Sun Bungalows on Gili Meno — five lumbung bungalows from 500.000 IDR, operated by Meno Dive Club
+  og_image_alt: Rising Sun Bungalows on Gili Meno — five lumbung bungalows from 500.000 IDR, partner with Meno Dive Club
   twitter_title: Rising Sun Bungalows | Gili Meno bungalows
-  twitter_description: Five lumbung bungalows, 2 min from Gili Meno harbour. Operated by Meno Dive Club. From 500.000 IDR/night. Dive and stay.
+  twitter_description: Five lumbung bungalows, 2 min from Gili Meno harbour. Partner with Meno Dive Club. From 500.000 IDR/night. Dive and stay.
 
 amenities:
   - Air conditioning

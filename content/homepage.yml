@@ -7,7 +7,7 @@ hero:
   tagline: |
     Slow mornings.
     Star-filled nights.
-  lead: Five Sasak-style lumbung bungalows on Gili Meno — the quiet Gili Island off northwest Lombok — less than two minutes from the harbour. Operated by Meno Dive Club. From 500.000 IDR a night, with monthly rates and Wi-Fi. Book the stay here; dive with Meno Dive Club. Not a Gili Trawangan pub crawl. Just the island.
+  lead: Five Sasak-style lumbung bungalows on Gili Meno — the quiet Gili Island off northwest Lombok — less than two minutes from the harbour. Partner with Meno Dive Club. From 500.000 IDR a night, with monthly rates and Wi-Fi. Book the stay here; dive with Meno Dive Club. Not a Gili Trawangan pub crawl. Just the island.
   cta_primary_label: From 500K IDR / night
   cta_secondary_label: Monthly rates
 
@@ -26,7 +26,7 @@ stay:
   heading: |
     Lumbung bungalows
     on Gili Meno
-  body: Five lumbung bungalows on Gili Meno, a two-minute walk from the harbour. Curved roofs, cool tile floors, private verandas, AC, mosquito nets, and ensuite bathrooms. Operated by Meno Dive Club — Gili Islands stay without Gili Trawangan’s party noise.
+  body: Five lumbung bungalows on Gili Meno, a two-minute walk from the harbour. Curved roofs, cool tile floors, private verandas, AC, mosquito nets, and ensuite bathrooms. Partner with Meno Dive Club — Gili Islands stay without Gili Trawangan’s party noise.
   price_suffix: IDR / night
   cta_label: Request dates
   photos:
@@ -66,7 +66,7 @@ long_stay:
   heading: |
     Stay a month.
     Work from Meno.
-  body: Monthly Gili Meno stays at Rising Sun Bungalows, operated by Meno Dive Club — garden space, reliable Wi-Fi, and a workspace so you can take calls without the Trawangan soundtrack.
+  body: Monthly Gili Meno stays at Rising Sun Bungalows, partner with Meno Dive Club — garden space, reliable Wi-Fi, and a workspace so you can take calls without the Trawangan soundtrack.
   bullets:
     - Wi-Fi suited for video calls and remote work
     - Workspace / desk space in a calm garden setting
@@ -90,10 +90,11 @@ cafe:
   image: /assets/web/cafe-combi.jpg
   image_alt: Yellow VW combi cafe van at Rising Sun Bungalows — opening soon
   cta_label: Follow for cafe news
+  menu: ""
 
 island:
   heading: The untouched Gili Island
-  intro: Gili Meno is the smallest of the three Gili Islands off northwest Lombok. Stay at Rising Sun Bungalows, less than two minutes from Gili Meno harbour and operated by Meno Dive Club, when you want reefs and turtles without Gili Trawangan’s 18–25 pub crawls.
+  intro: Gili Meno is the smallest of the three Gili Islands off northwest Lombok. Stay at Rising Sun Bungalows, less than two minutes from Gili Meno harbour and partner with Meno Dive Club, when you want reefs and turtles without Gili Trawangan’s 18–25 pub crawls.
   features:
     - icon: turtle
       title: Turtles & shallow reefs
@@ -120,12 +121,12 @@ island:
   cta_label: How to get here
 
 diving:
-  eyebrow: Operated by Meno Dive Club
+  eyebrow: Partner with Meno Dive Club
   heading: |
     Dive and stay on
     Gili Meno
   body: >-
-    Rising Sun Bungalows is operated by [Meno Dive Club](https://www.menodiveclub.com)
+    Rising Sun Bungalows is partner with [Meno Dive Club](https://www.menodiveclub.com)
     — the SSI dive centre on Gili Meno (est. 2018). Book your bungalow here, then scuba
     with the same family. Fun dives, Discover Scuba, full SSI courses, eco training,
     and Dive and Stay packages. Official name Meno Dive Club (people also search Gili Meno Dive Club).
@@ -172,7 +173,7 @@ get_there:
 
 book:
   heading: Book Gili Meno bungalows
-  lead: 500.000 IDR per night · five lumbung · monthly rates · operated by Meno Dive Club. No payment on this form — we confirm by email, usually within half a day.
+  lead: 500.000 IDR per night · five lumbung · monthly rates · partner with Meno Dive Club. No payment on this form — we confirm by email, usually within half a day.
   note: Mention long stay, diving plans, or cafe questions in your message.
   submit_label: Send booking request
   form_footnote: Submitted securely via Netlify Forms.

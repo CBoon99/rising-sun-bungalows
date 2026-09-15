@@ -6,18 +6,14 @@ They can change homepage copy, photos, prices, WhatsApp, Instagram, map pin, caf
 
 ## One-time Netlify steps (after this is live)
 
-Identity + Git Gateway are not on until you click them:
+Identity is **invite only**. Git Gateway is on (`CBoon99/rising-sun-bungalows`).
 
-1. Netlify → this site → **Integrations → Identity → Enable Identity**
-2. Registration: **Invite only**
-3. **Services → Git Gateway → Enable Git Gateway**
-4. **Identity → Invite users** → customer email
-5. Customer opens the invite, sets a password, then uses `/admin/`
+Invite the editor at **Identity → Invite users** → `risingsunbungalows@gmail.com` if they have not had an invite email. They set a password, then use `/admin/`.
 
-Do not leave registration open.
+Do not open registration.
 
 **Booking form email:** `risingsunbungalows@gmail.com`  
-After push: Netlify → Forms → booking → notifications → add that address (otherwise submissions stay on the Netlify account inbox).
+Netlify Forms hook on `booking` → `submission_created` emails that address. The form does not send WhatsApp; the float button / footer number is for guests to message Gunawan.
 
 ## Local preview
 

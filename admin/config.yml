@@ -48,7 +48,9 @@ collections:
           - { label: Check-out, name: checkout, widget: string }
           - { label: Pets allowed, name: pets_allowed, widget: boolean, default: false }
           - { label: Reply window, name: reply_window, widget: string }
-          - { label: WhatsApp number, name: whatsapp, widget: string, hint: "Country code + number, digits only, e.g. 6281917137769" }
+          - { label: WhatsApp number, name: whatsapp, widget: string, hint: "Country code + number, digits only, e.g. 6287725533777" }
+          - { label: WhatsApp display, name: whatsapp_display, widget: string, hint: "How it appears, e.g. +62 877-2553-3777" }
+          - { label: WhatsApp contact name, name: whatsapp_contact_name, widget: string, hint: "e.g. Gunawan" }
           - { label: WhatsApp prefill message, name: whatsapp_message, widget: text }
           - { label: Booking email, name: contact_email, widget: string }
           - { label: Instagram URL, name: instagram_url, widget: string }
@@ -183,6 +185,7 @@ collections:
               - { label: Badge text, name: badge, widget: string }
               - { label: Photo, name: image, widget: image }
               - { label: Photo alt, name: image_alt, widget: string }
+              - { label: Menu (optional), name: menu, widget: text, hint: "Paste the café menu. Leave blank to hide. You can use short lines or bullets." }
               - { label: Button, name: cta_label, widget: string }
           - label: Island
             name: island

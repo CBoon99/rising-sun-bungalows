@@ -9,8 +9,8 @@ eleventyExcludeFromCollections: true
   "type": "lodging",
   "organization": {
     "name": {{ settings.business_name | json | safe }},
-    "operator": {{ (settings.operator_name or settings.dive_club_name) | json | safe }},
-    "operatorUrl": {{ (settings.operator_url or settings.dive_club_url) | json | safe }},
+    "partner": {{ (settings.operator_name or settings.dive_club_name) | json | safe }},
+    "partnerUrl": {{ (settings.operator_url or settings.dive_club_url) | json | safe }},
     "email": {{ (settings.contact_email or "") | json | safe }},
     "telephone": {{ ("+" + settings.whatsapp) | json | safe }},
     "url": {{ (settings.site_url + "/") | json | safe }}

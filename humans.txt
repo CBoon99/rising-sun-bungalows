@@ -1,7 +1,7 @@
 /* TEAM */
 Developer: BoonMind
 Site: https://boonmind.io
-Client: Rising Sun Bungalows, operated by Meno Dive Club
+Client: Rising Sun Bungalows, partner with Meno Dive Club
 
 /* SITE */
 Standards: HTML5, custom CSS, Leaflet, GSAP

@@ -267,6 +267,9 @@
                 <h3 class="mono mb-3" style="color:var(--gold)">{{ home.cafe.badge }}</h3>
                 {% endif %}
                 <p class="muted leading-relaxed mb-6">{{ home.cafe.body }}</p>
+                {% if home.cafe.menu %}
+                <div class="muted leading-relaxed mb-6 cafe-menu">{{ home.cafe.menu | md | safe }}</div>
+                {% endif %}
                 <p class="faint mb-8" style="font-size:0.9rem">{{ home.cafe.note }}</p>
                 <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">{{ home.cafe.cta_label }}</a>
             </div>
@@ -495,15 +498,15 @@
                     <div class="brand-text">
                         <strong>{{ settings.short_name }}</strong> <span>{{ settings.product_name }}</span>
                         <p class="muted" style="font-size:0.85rem;margin:0.35rem 0 0;font-family:var(--font-body);letter-spacing:0;text-transform:none">{{ settings.location_line }}</p>
-                        <p class="faint" style="font-size:0.75rem;margin:0.25rem 0 0;font-family:var(--font-body);letter-spacing:0;text-transform:none">Operated by <a class="link-accent" href="{{ settings.operator_url or settings.dive_club_url }}" target="_blank" rel="noopener noreferrer">{{ settings.operator_name or settings.dive_club_name }}</a></p>
+                        <p class="faint" style="font-size:0.75rem;margin:0.25rem 0 0;font-family:var(--font-body);letter-spacing:0;text-transform:none">Partner with <a class="link-accent" href="{{ settings.operator_url or settings.dive_club_url }}" target="_blank" rel="noopener noreferrer">{{ settings.operator_name or settings.dive_club_name }}</a></p>
                     </div>
                 </div>
                 <address class="footer-nap">
                     Rising Sun Bungalows<br>
                     Near Gili Meno harbour, Gili Meno, Lombok, Indonesia<br>
-                    Operated by <a href="{{ settings.dive_club_url }}" target="_blank" rel="noopener noreferrer">Meno Dive Club</a><br>
+                    Partner with <a href="{{ settings.dive_club_url }}" target="_blank" rel="noopener noreferrer">Meno Dive Club</a><br>
                     {% if settings.contact_email %}<a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a><br>{% endif %}
-                    <a href="https://wa.me/{{ settings.whatsapp }}">WhatsApp +62 819 1713 7769</a>
+                    <a href="https://wa.me/{{ settings.whatsapp }}">WhatsApp{% if settings.whatsapp_contact_name %} {{ settings.whatsapp_contact_name }}{% endif %} {{ settings.whatsapp_display or ("+" + settings.whatsapp) }}</a>
                 </address>
                 <div>
                     <div class="footer-links">
