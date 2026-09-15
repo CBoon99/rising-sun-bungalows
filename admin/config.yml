@@ -122,6 +122,7 @@ collections:
               - { label: Product line, name: product, widget: string }
               - { label: Place line, name: place, widget: string }
               - { label: Tagline, name: tagline, widget: text, hint: "Line break = new line on the page" }
+              - { label: Cover lead (hero), name: cover_lead, widget: text, hint: "Short line on the photo. Keep it one breath." }
               - { label: Lead paragraph, name: lead, widget: text }
               - { label: Primary button, name: cta_primary_label, widget: string }
               - { label: Secondary button, name: cta_secondary_label, widget: string }

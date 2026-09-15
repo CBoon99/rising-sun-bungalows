@@ -6,7 +6,7 @@
   --bg-inverse: #2a231c;
   --text: #2a231c;
   --text-muted: #6b5f52;
-  --text-faint: #6b5f52;
+  --text-faint: #9a8b7a;
   --border: rgba(42, 35, 28, 0.1);
   --border-strong: rgba(42, 35, 28, 0.16);
   --accent: #5e6f5a;
@@ -36,7 +36,7 @@ html.dark {
   --bg-inverse: #f7f3ec;
   --text: #f3ece2;
   --text-muted: #c4b6a5;
-  --text-faint: #c4b6a5;
+  --text-faint: #8f8273;
   --border: rgba(243, 236, 226, 0.1);
   --border-strong: rgba(243, 236, 226, 0.16);
   --accent: #9aaf93;
@@ -65,14 +65,26 @@ html {
   scroll-padding-top: 5.5rem;
 }
 
-.crumbs {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.footer-crumbs {
   width: min(1120px, calc(100% - 2.5rem));
-  margin: 4.6rem auto 0;
+  margin: 0 auto 1rem;
   font-size: 0.78rem;
   color: var(--text-muted);
 }
 
-.crumbs ol {
+.footer-crumbs ol {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.6rem;
@@ -81,7 +93,7 @@ html {
   padding: 0;
 }
 
-.crumbs li:not(:last-child)::after {
+.footer-crumbs li:not(:last-child)::after {
   content: "/";
   margin-left: 0.6rem;
   color: var(--text-faint);
@@ -294,9 +306,6 @@ img {
 
 @media (min-width: 960px) {
   .nav-links {
-    display: flex;
-  }
-  .menu-toggle {
     display: none;
   }
 }
@@ -528,6 +537,9 @@ html.dark #hero-canvas {
 .cover-abs {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
   z-index: 0;
 }
 
@@ -582,26 +594,27 @@ html.dark #hero-canvas {
   max-width: 100%;
 }
 
-.hero-title {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .hero-wordmark {
   margin: 0;
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.85rem, 9vw, 5.75rem);
+  font-size: clamp(3.4rem, 11vw, 6.75rem);
   font-weight: 500;
   font-style: italic;
-  line-height: 0.98;
+  line-height: 0.95;
   letter-spacing: -0.01em;
   color: #f7f0e2;
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.35),
-    0 10px 36px rgba(0, 0, 0, 0.45);
+    0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.hero-rule {
+  width: 3.5rem;
+  height: 1px;
+  margin: 0.85rem auto 0;
+  background: var(--gold);
+  opacity: 0.85;
 }
 
 .hero-product {
@@ -684,7 +697,7 @@ html.dark #hero-canvas {
     padding-bottom: 1.5rem;
   }
   .hero-wordmark {
-    font-size: clamp(2.4rem, 7vw, 3.75rem);
+    font-size: clamp(2.8rem, 9vw, 5rem);
   }
   .hero-tagline {
     font-size: clamp(1.35rem, 3vw, 1.85rem);
@@ -700,7 +713,7 @@ html.dark #hero-canvas {
 
 @media (max-height: 620px) {
   .hero-wordmark {
-    font-size: clamp(2.1rem, 6vw, 2.8rem);
+    font-size: clamp(2.6rem, 8vw, 3.6rem);
   }
   .hero-tagline {
     font-size: 1.25rem;
