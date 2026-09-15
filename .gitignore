@@ -6,3 +6,6 @@ assets/old/
 node_modules/
 _site/
 .cache/
+
+# Local Netlify folder
+.netlify
