@@ -72,12 +72,12 @@
     "webp_kb": 96.1
   },
   "/assets/web/cafe-combi.jpg": {
-    "w": 1400,
-    "h": 1050,
+    "w": 1280,
+    "h": 960,
     "tw": 800,
     "th": 600,
-    "full_kb": 232.1,
-    "webp_kb": 146.7
+    "full_kb": 216.4,
+    "webp_kb": 147.6
   },
   "/assets/web/dive-fins.jpg": {
     "w": 933,
