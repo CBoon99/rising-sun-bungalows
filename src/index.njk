@@ -533,5 +533,26 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script defer src="/js/app.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // Netlify Identity — recovery/invite loops to homepage instead of /admin/
+      // If a recovery or invite token lands on /, forward it to /admin/ where Decap handles it.
+      (function () {
+        var h = window.location.hash;
+        if (h && (h.indexOf("invite_token") !== -1 || h.indexOf("recovery_token") !== -1)) {
+          window.location.replace("/admin/" + h);
+          return;
+        }
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", function (user) {
+            if (!user) {
+              window.netlifyIdentity.on("login", function () {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      })();
+    </script>
 </body>
 </html>

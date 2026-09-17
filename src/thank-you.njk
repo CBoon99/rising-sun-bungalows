@@ -67,5 +67,14 @@ permalink: /thank-you.html
         </div>
         <p class="faint" style="margin-top:3rem;font-size:0.75rem">Developed by <a class="link-accent" href="{{ settings.developer_url }}" target="_blank" rel="noopener noreferrer">{{ settings.developer_name }}</a></p>
     </div>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      (function () {
+        var h = window.location.hash;
+        if (h && (h.indexOf("invite_token") !== -1 || h.indexOf("recovery_token") !== -1)) {
+          window.location.replace("/admin/" + h);
+        }
+      })();
+    </script>
 </body>
 </html>
