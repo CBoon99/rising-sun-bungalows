@@ -221,7 +221,7 @@ collections:
             fields:
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Heading, name: heading, widget: text }
-              - { label: Body (links allowed as [text](url)), name: body, widget: markdown }
+              - { label: "Body (links allowed as [text](url))", name: body, widget: markdown }
               - label: Bullets
                 name: bullets
                 widget: list
@@ -282,7 +282,7 @@ collections:
           - { label: Browser title, name: title, widget: string }
           - { label: Heading, name: heading, widget: string }
           - { label: Meta description, name: description, widget: text }
-          - { label: Body (links as [text](url)), name: body, widget: markdown }
+          - { label: "Body (links as [text](url))", name: body, widget: markdown }
           - { label: Back button, name: back_label, widget: string }
 
   - name: faqs

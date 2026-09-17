@@ -5,7 +5,9 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve --port=8080",
-    "cms": "npx --yes decap-server"
+    "cms": "npx --yes decap-server",
+    "validate:cms": "node ./scripts/validate-cms-config.js",
+    "test": "node ./scripts/validate-cms-config.js"
   },
   "engines": {
     "node": ">=18"
